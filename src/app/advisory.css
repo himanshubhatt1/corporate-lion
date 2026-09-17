@@ -1,0 +1,58 @@
+/* Confidential advisory: the shared contact block on the homepage and the contact page. */
+.advisory-contact { position: relative; padding: clamp(64px, 6.3vw, 121px) 0 clamp(64px, 6vw, 115px); background: #3b352f; color: #fff; }
+.advisory-contact__grid { display: grid; grid-template-columns: minmax(0, 1fr) 49.3%; column-gap: 9.5%; align-items: start; width: min(84%, 1620px); margin: 0 auto; }
+.advisory-contact__eyebrow { display: inline-flex; align-items: center; gap: clamp(8px, .73vw, 14px); margin-bottom: clamp(6px, .8vw, 16px); color: #d2894a; font-size: clamp(10px, .885vw, 17px); font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
+.advisory-contact__eyebrow::before { width: clamp(18px, 1.56vw, 30px); height: 1px; content: ""; background: currentColor; }
+.advisory-contact .advisory-contact__title h2 { max-width: 12em; margin: 0; color: #f6efe6 !important; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(34px, 2.92vw, 56px); font-weight: 400; line-height: 1.16; letter-spacing: 0; }
+.advisory-contact .advisory-contact__title h2 em { display: block; color: #ecd2b4 !important; font-style: normal; }
+.advisory-contact__title p { max-width: 650px; margin: clamp(16px, 1.9vw, 36px) 0 0; color: #d3b691 !important; font-size: clamp(13px, 1.04vw, 20px); line-height: 1.72; }
+.motion-ready .advisory-contact__title[data-reveal] .advisory-contact__eyebrow::before { transform: scaleX(0); transform-origin: right center; transition: transform 900ms cubic-bezier(.22, 1, .36, 1) 250ms; }
+.motion-ready .advisory-contact__title.is-visible .advisory-contact__eyebrow::before { transform: scaleX(1); }
+.motion-ready .advisory-contact__title[data-reveal] h2 em { opacity: 0; transform: translateY(.35em); transition: opacity 900ms ease 220ms, transform 1000ms cubic-bezier(.22, 1, .36, 1) 220ms; }
+.motion-ready .advisory-contact__title.is-visible h2 em { opacity: 1; transform: none; }
+
+.advisory-contact .contact-details { display: grid; gap: clamp(20px, 2vw, 38px); margin: clamp(28px, 2.9vw, 56px) 0 0; padding: 0; list-style: none; }
+.advisory-contact .contact-details li { display: grid; grid-template-columns: clamp(20px, 1.4vw, 26px) minmax(0, 1fr); gap: clamp(10px, .9vw, 16px); align-items: start; }
+.advisory-contact .contact-details svg { width: 100%; margin-top: 4px; fill: #d2894a; transition: transform 400ms cubic-bezier(.22, 1, .36, 1); }
+.advisory-contact .contact-details li:hover svg { transform: translateY(-3px) scale(1.1); }
+.advisory-contact .contact-details h3 { margin: 0 0 4px; color: #fff !important; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(16px, 1.04vw, 20px); font-weight: 500; line-height: 1.3; }
+.advisory-contact .contact-details span { display: block; color: #cfb28f; font-size: clamp(12px, .78vw, 15px); line-height: 1.55; }
+.advisory-contact .whatsapp-connect { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(100%, 541px); min-height: clamp(76px, 5.2vw, 100px); margin-top: clamp(32px, 2.6vw, 50px); padding: 0 clamp(18px, 1.3vw, 25px); border: 1px solid rgba(214, 206, 196, .32); transition: border-color 400ms ease, background 400ms ease, transform 400ms cubic-bezier(.22, 1, .36, 1); }
+.advisory-contact .whatsapp-connect:hover { border-color: #25d366; background: rgba(37, 211, 102, .06); transform: translateY(-3px); }
+.advisory-contact .whatsapp-connect strong { display: block; color: #fff; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(16px, 1.04vw, 20px); font-weight: 500; }
+.advisory-contact .whatsapp-connect small { display: block; margin-top: 2px; color: #cfb28f; font-size: clamp(12px, .78vw, 15px); }
+.advisory-contact .whatsapp-connect__icon { position: relative; display: grid; flex-shrink: 0; place-items: center; width: clamp(40px, 2.6vw, 50px); height: clamp(40px, 2.6vw, 50px); border-radius: 50%; background: #1f9d55; isolation: isolate; }
+.advisory-contact .whatsapp-connect__icon svg { width: 55%; height: 55%; fill: none; stroke: #fff; stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+@media (prefers-reduced-motion: no-preference) {
+  .advisory-contact .whatsapp-connect__icon::before { position: absolute; inset: 0; z-index: -1; content: ""; border-radius: 50%; background: rgba(37, 211, 102, .45); animation: sitePulse 2.4s ease-out infinite; }
+}
+
+.advisory-contact .inquiry-form { gap: 0; padding: clamp(28px, 2.6vw, 50px); background: #262420; border: 0; box-shadow: 0 30px 60px rgba(0, 0, 0, .18); }
+.advisory-contact .inquiry-form h3 { margin-bottom: clamp(20px, 2.1vw, 40px); color: #fff !important; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 1.67vw, 32px); font-weight: 500; }
+.advisory-contact .inquiry-form .form-grid { gap: clamp(24px, 2.6vw, 50px) clamp(20px, 2.08vw, 40px); }
+.advisory-contact .inquiry-form label,
+.advisory-contact .interest-chips legend { gap: clamp(4px, .5vw, 10px); color: #d7b690; font-size: clamp(10px, .7vw, 13.5px); font-weight: 500; letter-spacing: .15em; text-transform: uppercase; }
+.advisory-contact .inquiry-form input,
+.advisory-contact .inquiry-form textarea { height: clamp(40px, 2.6vw, 50px); color: #fff; font-size: clamp(13px, .885vw, 17px); letter-spacing: 0; text-transform: none; border-bottom: 1px solid #57524b; transition: border-color 350ms ease; }
+.advisory-contact .inquiry-form textarea { height: auto; min-height: clamp(72px, 4.9vw, 94px); line-height: 1.5; resize: vertical; }
+.advisory-contact .inquiry-form input:focus,
+.advisory-contact .inquiry-form textarea:focus { border-color: #d2894a; }
+.advisory-contact .inquiry-form ::placeholder { color: #8e877e; }
+.advisory-contact .interest-chips { min-width: 0; margin: clamp(28px, 3vw, 58px) 0 clamp(28px, 2.6vw, 50px); padding: 0; border: 0; }
+.advisory-contact .interest-chips legend { padding: 0; margin-bottom: clamp(12px, 1.2vw, 24px); }
+.advisory-contact .interest-chips > div { display: flex; flex-wrap: wrap; gap: clamp(8px, .55vw, 11px); }
+.advisory-contact .inquiry-form .interest-chips button { width: auto; min-height: clamp(34px, 2.1vw, 40px); margin: 0; padding: 0 clamp(12px, .95vw, 18px); border: 1px solid #6a645d; background: transparent; color: #ebe5dc; font-size: clamp(10px, .7vw, 13.5px); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: background 300ms ease, border-color 300ms ease, color 300ms ease, transform 300ms ease; }
+.advisory-contact .inquiry-form .interest-chips button:hover { border-color: #d2894a; color: #fff; transform: translateY(-2px); }
+.advisory-contact .inquiry-form .interest-chips button.is-active { border-color: #b87333; background: #b87333; color: #fff; }
+.advisory-contact .inquiry-form .button { width: 100%; min-height: clamp(48px, 3.13vw, 60px); margin-top: clamp(28px, 2.5vw, 48px); border-radius: 0; font-size: clamp(11px, .73vw, 14px); font-weight: 600; letter-spacing: .2em; box-shadow: none; }
+.advisory-contact .inquiry-form__note { display: flex; align-items: center; gap: 6px; margin: clamp(16px, 1.3vw, 26px) 0 0; color: #cfc6bb !important; font-size: clamp(11px, .78vw, 15px); }
+.advisory-contact .inquiry-form__note svg { width: 1em; height: 1em; fill: #d2894a; }
+@media (max-width: 980px) {
+  .advisory-contact__grid { grid-template-columns: 1fr; row-gap: 48px; }
+}
+@media (max-width: 700px) {
+  .advisory-contact__grid { width: calc(100% - 40px); }
+}
+@media (max-width: 600px) {
+  .advisory-contact .inquiry-form .form-grid { grid-template-columns: 1fr; }
+}

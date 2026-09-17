@@ -1,0 +1,184 @@
+/* Commercial leasing: composition from the 1920 x 6056 reference. */
+.commercial-page { background: #fbf5ec; }
+.leasing-container { position: relative; z-index: 1; width: min(84.4%, 1622px); margin: 0 auto; }
+.commercial-page .eyebrow { display: inline-flex; align-items: center; gap: clamp(8px, .73vw, 14px); margin-bottom: clamp(8px, .78vw, 15px); color: #b87333; font-size: clamp(9px, .73vw, 14px); font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.commercial-page .eyebrow::before { width: clamp(18px, 1.56vw, 30px); height: 1px; content: ""; background: currentColor; }
+.commercial-page .eyebrow::after { display: none; }
+.commercial-page :is(h1, h2) { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; letter-spacing: -.01em; }
+.commercial-page h2 { font-size: clamp(38px, 4.6vw, 88px); line-height: 1; }
+.commercial-page h2 em { font-style: normal; }
+.leasing-title { text-align: center; }
+.leasing-title--left { text-align: left; }
+.commercial-page .button { gap: 10px; min-height: clamp(42px, 2.6vw, 50px); padding: 0 clamp(20px, 1.56vw, 30px); border-radius: 0; font-size: clamp(10px, .68vw, 13px); font-weight: 500; letter-spacing: .16em; box-shadow: none; }
+.commercial-page .button span[aria-hidden="true"] { display: inline-block; transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
+.commercial-page .button:hover span[aria-hidden="true"] { transform: translateX(5px); }
+.commercial-page .button--outline { border: 1px solid rgba(255, 255, 255, .8); background: transparent; color: #fff; }
+.commercial-page .button--outline:hover { background: #fff; color: #2b2622; }
+
+/* Section headings: the eyebrow rule draws in and the copper line rises into place. */
+.motion-ready .leasing-title[data-reveal] .eyebrow::before { transform: scaleX(0); transform-origin: right center; transition: transform 900ms cubic-bezier(.22, 1, .36, 1) 250ms; }
+.motion-ready .leasing-title.is-visible .eyebrow::before { transform: scaleX(1); }
+.motion-ready .leasing-title[data-reveal] h2 em { display: inline-block; opacity: 0; transform: translateY(.35em); transition: opacity 900ms ease 220ms, transform 1000ms cubic-bezier(.22, 1, .36, 1) 220ms; }
+.motion-ready .leasing-title.is-visible h2 em { opacity: 1; transform: none; }
+
+/* Hero */
+.leasing-hero { position: relative; height: clamp(600px, 44.3vw, 851px); overflow: hidden; color: #fff; isolation: isolate; }
+.leasing-hero::before { position: absolute; inset: 0; z-index: 1; content: ""; pointer-events: none; background: linear-gradient(90deg, rgba(14, 12, 10, .74) 0%, rgba(14, 12, 10, .48) 36%, rgba(14, 12, 10, .1) 68%, rgba(14, 12, 10, .12) 100%), linear-gradient(180deg, rgba(14, 12, 10, .5) 0%, rgba(14, 12, 10, 0) 24%); }
+.leasing-hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; animation: leasingHeroDrift 22s ease-in-out infinite alternate; }
+.leasing-hero__content { position: relative; z-index: 2; width: min(67.4%, 1294px); margin: clamp(40px, 9.95vw, 191px) auto 0; }
+.leasing-hero__content > * { opacity: 0; transform: translateY(22px); animation: heroTextIn 1000ms cubic-bezier(.22, 1, .36, 1) forwards; }
+.leasing-hero__content > :nth-child(1) { animation-delay: 300ms; }
+.leasing-hero__content > :nth-child(2) { animation-delay: 450ms; }
+.leasing-hero__content > :nth-child(3) { animation-delay: 600ms; }
+.leasing-hero__content > :nth-child(4) { animation-delay: 760ms; }
+.commercial-page .leasing-hero .eyebrow { color: #d99a5e; }
+.commercial-page .leasing-hero h1 { color: #fff !important; font-size: clamp(40px, 4.67vw, 90px); line-height: .98; }
+.commercial-page .leasing-hero p { max-width: clamp(320px, 39.6vw, 760px); margin: clamp(14px, 1.45vw, 28px) 0 0; color: rgba(255, 255, 255, .88) !important; font-size: clamp(13px, .9vw, 17px); line-height: 1.55; }
+.leasing-hero__actions { display: flex; flex-wrap: wrap; gap: clamp(10px, 1.56vw, 30px); margin-top: clamp(24px, 2.6vw, 50px); }
+.project-card { position: absolute; z-index: 2; top: clamp(200px, 15.6vw, 300px); right: 0; display: grid; justify-items: center; align-content: center; gap: clamp(4px, .42vw, 8px); width: clamp(130px, 9.43vw, 181px); min-height: clamp(180px, 13.7vw, 263px); padding: clamp(14px, 1.15vw, 22px) clamp(10px, .83vw, 16px); border: 1px solid rgba(255, 255, 255, .14); border-right: 0; background: rgba(38, 33, 28, .92); box-shadow: 0 30px 60px rgba(0, 0, 0, .35); text-align: center; animation: projectCardIn 1100ms cubic-bezier(.22, 1, .36, 1) 900ms both; }
+.project-card > span { color: #efe6da; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(15px, 1.15vw, 22px); line-height: 1.05; }
+.project-card strong { color: #fff; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(40px, 3.1vw, 60px); font-weight: 400; line-height: 1; animation: projectNumberFloat 3.4s ease-in-out 2s infinite; }
+.project-card small { color: #e2d2bf; font-size: clamp(8px, .6vw, 11.5px); letter-spacing: .18em; text-transform: uppercase; }
+.project-card a { display: inline-flex; align-items: center; gap: 6px; min-height: clamp(24px, 1.6vw, 30px); margin-top: clamp(6px, .63vw, 12px); padding: 0 clamp(10px, .83vw, 16px); background: #b87333; color: #fff; font-size: clamp(8px, .55vw, 10.5px); letter-spacing: .14em; text-transform: uppercase; transition: filter 300ms ease; }
+.project-card a:hover { filter: brightness(1.12); }
+.project-card a span { transition: transform 300ms ease; }
+.project-card a:hover span { transform: translateX(3px); }
+
+/* Tenant-first advisory */
+.tenant-advisory { position: relative; padding: clamp(64px, 6.15vw, 118px) 0 clamp(64px, 6.3vw, 121px); overflow: hidden; background: #3d3832; color: #fff; }
+.tenant-advisory__grid { display: grid; grid-template-columns: 42.6% minmax(0, 1fr); column-gap: 5.05%; align-items: center; }
+.tenant-advisory__image { overflow: hidden; aspect-ratio: 691 / 788; box-shadow: 0 30px 60px rgba(0, 0, 0, .25); }
+.tenant-advisory__image img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 1800ms cubic-bezier(.22, 1, .36, 1); }
+.tenant-advisory__image.is-visible img { transform: scale(1); }
+.tenant-advisory__image.is-visible:hover img { transform: scale(1.04); }
+.commercial-page .tenant-advisory h2 { color: #fff !important; }
+.advisory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: clamp(40px, 4.7vw, 90px); }
+.advisory-grid article { padding: 0 clamp(16px, 2.24vw, 43px) clamp(24px, 2.4vw, 46px) 0; }
+.advisory-grid article:nth-child(even) { padding-right: 0; padding-left: clamp(16px, 2.24vw, 43px); border-left: 1px solid rgba(255, 255, 255, .14); }
+.advisory-grid article:nth-child(n + 3) { padding-top: clamp(24px, 2.4vw, 46px); padding-bottom: 0; border-top: 1px solid rgba(255, 255, 255, .14); }
+.advisory-grid svg { width: clamp(22px, 1.6vw, 30px); height: clamp(22px, 1.6vw, 30px); fill: #d2894a; transition: transform 450ms cubic-bezier(.34, 1.56, .64, 1); }
+.advisory-grid article:hover svg { transform: translateY(-4px) scale(1.12); }
+.commercial-page .advisory-grid h3 { margin: clamp(12px, 1.15vw, 22px) 0 clamp(6px, .63vw, 12px); color: #fff !important; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(18px, 1.3vw, 25px); font-weight: 500; transition: color 300ms ease; }
+.commercial-page .advisory-grid article:hover h3 { color: #e0a36a !important; }
+.commercial-page .advisory-grid p { max-width: 380px; margin: 0; color: #b9afa4 !important; font-size: clamp(12px, .78vw, 15px); line-height: 1.6; }
+
+/* Workspace solutions */
+.workspace-solutions { padding: clamp(64px, 6.5vw, 125px) 0 clamp(64px, 6.3vw, 121px); background-color: #f7efe5; background-image: linear-gradient(rgba(120, 98, 74, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 98, 74, .07) 1px, transparent 1px); background-size: clamp(32px, 2.9vw, 56px) clamp(32px, 2.9vw, 56px); }
+.workspace-solutions .leasing-title { margin-bottom: clamp(32px, 3.3vw, 64px); }
+.workspace-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 1.4vw, 27px); }
+.commercial-page .workspace-card { position: relative; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(54, 43, 30, .07); transition: opacity 700ms ease, transform 500ms cubic-bezier(.22, 1, .36, 1), box-shadow 500ms ease; }
+.commercial-page .workspace-card:hover { box-shadow: 0 26px 50px rgba(54, 43, 30, .14); transform: translateY(-8px); transition-delay: 0s !important; }
+.workspace-card::after { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; content: ""; background: #b87333; transform: scaleX(0); transform-origin: left center; transition: transform 600ms cubic-bezier(.22, 1, .36, 1); }
+.workspace-card:hover::after { transform: scaleX(1); }
+.workspace-card__image { overflow: hidden; aspect-ratio: 385 / 236; }
+.workspace-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms cubic-bezier(.22, 1, .36, 1); }
+.workspace-card:hover .workspace-card__image img { transform: scale(1.07); }
+.workspace-card__body { padding: clamp(18px, 1.5vw, 29px) clamp(18px, 1.56vw, 30px) clamp(24px, 1.9vw, 36px); }
+.workspace-card__body > span { display: block; color: #b87333; font-size: clamp(9px, .6vw, 11.5px); font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.commercial-page .workspace-card h3 { margin: clamp(6px, .63vw, 12px) 0 clamp(8px, .78vw, 15px); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(20px, 1.4vw, 27px); font-weight: 500; line-height: 1.15; transition: color 300ms ease; }
+.commercial-page .workspace-card:hover h3 { color: #b87333 !important; }
+.commercial-page .workspace-card p { margin: 0; color: #6b6b6b !important; font-size: clamp(11px, .72vw, 14px); line-height: 1.6; }
+
+/* Leasing journey: chevron track with milestones alternating above and below. */
+.leasing-journey { position: relative; padding: clamp(64px, 6.45vw, 124px) 0 clamp(64px, 6.2vw, 120px); background-color: #fffdf9; background-image: radial-gradient(rgba(184, 115, 51, .12) 1px, transparent 1.4px); background-size: 22px 22px; }
+.leasing-journey .leasing-title { margin-bottom: clamp(24px, 2.6vw, 50px); }
+.journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(81.3%, 1318px); margin: 0 auto; padding: 0; list-style: none; }
+.journey-step { --tip: clamp(10px, .85vw, 16px); display: grid; grid-template-columns: 100%; grid-template-rows: clamp(190px, 12.8vw, 246px) clamp(32px, 2.2vw, 42px) clamp(170px, 11.5vw, 220px); justify-items: center; text-align: center; }
+.journey-step__marker { grid-row: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.journey-step--text-top .journey-step__marker { grid-row: 3; flex-direction: column-reverse; }
+.journey-step__marker strong { display: grid; place-items: center; width: clamp(56px, 4.7vw, 90px); aspect-ratio: 1; border-radius: 50%; background: #b87333; color: #fff; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(20px, 1.6vw, 31px); font-weight: 500; box-shadow: 0 14px 30px rgba(184, 115, 51, .28); }
+.journey-step__marker i { display: block; width: 1px; height: clamp(44px, 6.3vw, 121px); background: #b87333; transform-origin: bottom center; }
+.journey-step--text-top .journey-step__marker i { transform-origin: top center; }
+.journey-step__phase { grid-row: 2; display: grid; place-items: center; justify-self: stretch; color: #fff; background: #b87333; font-size: clamp(9px, .68vw, 13px); font-weight: 600; letter-spacing: .16em; text-transform: uppercase; clip-path: polygon(0 0, calc(100% - var(--tip)) 0, 100% 50%, calc(100% - var(--tip)) 100%, 0 100%, var(--tip) 50%); transform-origin: left center; }
+.journey-step:first-child .journey-step__phase { clip-path: polygon(0 0, calc(100% - var(--tip)) 0, 100% 50%, calc(100% - var(--tip)) 100%, 0 100%); }
+.journey-step:nth-child(2) .journey-step__phase { background: #c99a6d; }
+.journey-step:nth-child(3) .journey-step__phase { background: #dcc0a0; }
+.journey-step:nth-child(4) .journey-step__phase { background: #ebe1d5; color: #7d6d5d; }
+.journey-step__text { grid-row: 3; align-self: start; max-width: 300px; padding: clamp(16px, 1.45vw, 28px) 8px 0; }
+.journey-step--text-top .journey-step__text { grid-row: 1; align-self: end; padding: 0 8px clamp(18px, 1.56vw, 30px); }
+.commercial-page .journey-step__text h3 { margin: 0 0 clamp(4px, .5vw, 10px); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(18px, 1.35vw, 26px); font-weight: 500; line-height: 1.2; transition: color 300ms ease; }
+.commercial-page .journey-step:hover .journey-step__text h3 { color: #b87333 !important; }
+.commercial-page .journey-step__text p { margin: 0; font-size: clamp(11px, .73vw, 14px); line-height: 1.55; }
+.motion-ready .journey .journey-step__phase { transform: scaleX(0); transition: transform 700ms cubic-bezier(.65, 0, .35, 1) calc(var(--step) * 260ms + 200ms); }
+.motion-ready .journey .journey-step__marker i { transform: scaleY(0); transition: transform 500ms ease calc(var(--step) * 260ms + 650ms); }
+.motion-ready .journey .journey-step__marker strong { transform: scale(0); transition: transform 650ms cubic-bezier(.34, 1.56, .64, 1) calc(var(--step) * 260ms + 950ms), box-shadow 350ms ease; }
+.motion-ready .journey .journey-step__text { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease calc(var(--step) * 260ms + 750ms), transform 700ms cubic-bezier(.22, 1, .36, 1) calc(var(--step) * 260ms + 750ms); }
+.motion-ready .journey.is-visible :is(.journey-step__phase, .journey-step__marker i, .journey-step__marker strong, .journey-step__text) { opacity: 1; transform: none; }
+.journey-step:hover .journey-step__marker strong { box-shadow: 0 0 0 10px rgba(184, 115, 51, .15), 0 14px 30px rgba(184, 115, 51, .28); }
+
+/* Market coverage */
+.market-coverage { position: relative; padding: clamp(64px, 6.8vw, 130px) 0 clamp(64px, 6.6vw, 126px); overflow: hidden; background: #3d3832; }
+.market-coverage__map { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .12; mix-blend-mode: screen; animation: leasingMapDrift 30s ease-in-out infinite alternate; }
+.market-coverage__grid { display: grid; grid-template-columns: 40% minmax(0, 1fr); column-gap: 13%; align-items: center; }
+.commercial-page .market-coverage h2 { color: #fff !important; }
+.commercial-page .market-coverage .leasing-title p { max-width: 540px; margin: clamp(14px, 1.35vw, 26px) 0 0; color: #d9d0c5 !important; font-size: clamp(13px, .9vw, 17px); line-height: 1.6; }
+.market-list { margin: 0; padding: 0; list-style: none; }
+.market-list li { position: relative; display: grid; grid-template-columns: clamp(30px, 3.2vw, 61px) minmax(0, .95fr) minmax(0, 1fr); align-items: center; gap: 12px; min-height: clamp(60px, 4.27vw, 82px); border-bottom: 1px solid rgba(255, 255, 255, .1); }
+.market-list li::before { position: absolute; inset: 0; z-index: -1; content: ""; background: linear-gradient(90deg, rgba(184, 115, 51, .16), transparent 80%); opacity: 0; transition: opacity 400ms ease; }
+.market-list li:hover::before { opacity: 1; }
+.market-list span { padding-left: 6px; color: rgba(255, 255, 255, .35); font-size: clamp(9px, .6vw, 11.5px); letter-spacing: .12em; transition: color 300ms ease; }
+.market-list li:hover span { color: #d2894a; }
+.commercial-page .market-list h3 { margin: 0; color: #fff !important; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(18px, 1.3vw, 25px); font-weight: 400; transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
+.commercial-page .market-list li:hover h3 { transform: translateX(8px); }
+.commercial-page .market-list p { margin: 0; color: rgba(255, 255, 255, .42) !important; font-size: clamp(8px, .55vw, 10.5px); letter-spacing: .14em; text-transform: uppercase; }
+
+/* Calls to action */
+.leasing-cta { position: relative; padding: clamp(72px, 7vw, 134px) 0 clamp(72px, 6.25vw, 120px); overflow: hidden; background: #fff; text-align: center; }
+.leasing-cta--tenant { background: #fbf6ee; }
+.leasing-cta--tenant::before { position: absolute; inset: -200px; content: ""; pointer-events: none; background: url("/images/overview-pattern.svg") 0 0 / 172px 195px repeat; opacity: .25; animation: leasingPatternDrift 40s linear infinite; }
+.leasing-cta .leasing-container { width: min(1320px, calc(100% - 40px)); }
+.commercial-page .leasing-cta h2 { font-size: clamp(32px, 4vw, 77px); line-height: 1.1; }
+.commercial-page .leasing-cta p { width: min(600px, 100%); margin: clamp(12px, 1.15vw, 22px) auto clamp(24px, 2.8vw, 54px); font-size: clamp(12px, .8vw, 15px); line-height: 1.6; }
+.leasing-cta .button { min-height: clamp(42px, 2.5vw, 48px); padding: 0 clamp(20px, 1.7vw, 32px); }
+
+@keyframes leasingHeroDrift { from { transform: scale(1.03) translate3d(0, 0, 0); } to { transform: scale(1.09) translate3d(-1.2%, -.8%, 0); } }
+@keyframes projectCardIn { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: none; } }
+@keyframes projectNumberFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes leasingMapDrift { from { transform: scale(1.05) translate3d(0, 0, 0); } to { transform: scale(1.12) translate3d(2%, -1.5%, 0); } }
+@keyframes leasingPatternDrift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(172px, 195px, 0); } }
+
+@media (max-width: 1100px) {
+  .leasing-hero__content { width: calc(100% - 40px); }
+  .project-card { top: auto; bottom: 36px; }
+  .tenant-advisory__grid,
+  .market-coverage__grid { grid-template-columns: 1fr; row-gap: 48px; }
+  .tenant-advisory__image { aspect-ratio: 16 / 11; }
+  .workspace-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journey { width: 100%; }
+}
+@media (max-width: 900px) {
+  .journey { grid-template-columns: 1fr; gap: 28px; width: min(100%, 520px); }
+  .journey-step,
+  .journey-step--text-top { grid-template-columns: 64px minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 18px; justify-items: start; text-align: left; }
+  .journey-step__marker,
+  .journey-step--text-top .journey-step__marker { grid-row: 1 / span 2; grid-column: 1; flex-direction: column; justify-content: flex-start; }
+  .journey-step__marker strong { width: 56px; }
+  .journey-step__marker i { display: none; }
+  .journey-step__phase { grid-row: 1; grid-column: 2; justify-self: start; height: 32px; padding: 0 30px 0 22px; }
+  .journey-step__text,
+  .journey-step--text-top .journey-step__text { grid-row: 2; grid-column: 2; align-self: start; max-width: none; padding: 10px 0 0; }
+}
+@media (max-width: 700px) {
+  .leasing-container { width: calc(100% - 40px); }
+  .leasing-hero { height: auto; min-height: 660px; padding-bottom: 150px; }
+  .leasing-hero__actions { flex-direction: column; align-items: stretch; }
+  .leasing-hero__actions .button { justify-content: center; }
+  .project-card { left: 20px; right: 20px; bottom: 24px; width: auto; min-height: 0; grid-auto-flow: column; align-items: center; justify-content: space-between; padding: 14px 16px; border-right: 1px solid rgba(255, 255, 255, .14); }
+  .project-card br { display: none; }
+  .project-card strong { font-size: 36px; }
+  .project-card a { margin-top: 0; }
+  .workspace-grid,
+  .advisory-grid { grid-template-columns: 1fr; }
+  .advisory-grid article,
+  .advisory-grid article:nth-child(even),
+  .advisory-grid article:nth-child(n + 3) { padding: 22px 0; border-left: 0; border-top: 1px solid rgba(255, 255, 255, .14); }
+  .market-list li { grid-template-columns: 34px minmax(0, 1fr); row-gap: 4px; padding: 14px 0; }
+  .market-list p { grid-column: 2; }
+  .commercial-page .leasing-cta h2 br { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .leasing-hero__image,
+  .project-card strong,
+  .market-coverage__map,
+  .leasing-cta--tenant::before { animation: none; }
+}

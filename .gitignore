@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+dev-server.log
+*.tsbuildinfo
+.env*
+!.env.example
+next_top.zip
