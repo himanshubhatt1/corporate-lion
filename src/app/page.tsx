@@ -1,18 +1,16 @@
 import { SectionTitle } from "../components/SectionTitle";
 import { HomeSezModal } from "../components/HomeSezModal";
-import { EcosystemDiagram } from "../components/EcosystemDiagram";
 import { TestimonialSlider } from "../components/TestimonialSlider";
 import { AdvisoryContact } from "../components/AdvisoryContact";
-import { SiteFooter } from "../components/SiteFooter";
-import { SiteHeader } from "../components/SiteHeader";
 import { asset } from "../lib/assets";
 import {
   insights,
   metrics,
   serviceCards,
-  stakeholders,
   videos
 } from "../data/home";
+import { SiteHeader } from "../components/SiteHeader";
+import { SiteFooter } from "../components/SiteFooter";
 
 function countParts(value: string) {
   const [, number = "0", suffix = ""] = value.match(/^([\d.]+)(.*)$/) ?? [];
@@ -27,14 +25,9 @@ export default function Home() {
         className="hero"
       >
         <SiteHeader tone="dark" />
-
         <div className="hero__content">
-          <span className="eyebrow eyebrow--light">Prime Commercial Advisory</span>
-          <h1>The Right Address Starts<br />with the Right Advisor</h1>
-          <p>
-            Corporate Lion connects businesses, investors, landowners and developers through
-            strategic real estate solutions, market intelligence and meaningful relationships.
-          </p>
+          <h1>Roar Ahead in Real Estate</h1>
+          <p>Shaping Tomorrow&apos;s Addresses Since 2013</p>
           <a className="button button--primary" href="#contact">
             Let&apos;s Connect <span aria-hidden="true">→</span>
           </a>
@@ -52,15 +45,21 @@ export default function Home() {
               title="Property. Partnership. Progress."
               accent="Progress."
               align="left"
-            >
-              Every landmark investment, successful expansion, and long-term partnership begins
-              with the right strategy. Whether you&apos;re expanding, investing, or establishing a new
-              presence, Corporate Lion helps you move forward with confidence, clarity, and the right opportunities.
-            </SectionTitle>
+            />
+            <p>
+              Every successful commercial property investment, real estate expansion, and strategic
+              business partnership begins with the right strategy.
+            </p>
+            <p>
+              Whether you&apos;re investing in commercial real estate, expanding your business, or
+              establishing a new presence, Corporate Lion helps you discover the right property
+              investment opportunities, real estate solutions, and strategic partnerships to support
+              confident decisions, sustainable growth, and long-term success.
+            </p>
           </div>
           <div className="overview__media" data-reveal="image-stack">
-            <img className="overview__main" src={asset("Rectangle 30.svg")} alt="Modern commercial facade" />
-            <img className="overview__float" src={asset("Rectangle 31.svg")} alt="Premium villa property" />
+            <img className="overview__main" src={asset("home/overview-residences.webp")} alt="Premium residential towers surrounded by landscaped gardens" />
+            <img className="overview__float" src={asset("home/overview-city.webp")} alt="Commercial towers in a city skyline" />
             <div className="experience-card" data-reveal="scale">
               <strong>15+</strong>
               <span>Years of Experience</span>
@@ -73,36 +72,31 @@ export default function Home() {
         <div className="container">
           <SectionTitle
             eyebrow="Synergistic Growth"
-            title="Spaces that reflect Relationships"
-            accent="Relationships"
+            title="Solution for Every Real Estate Ambition"
+            accent="Real Estate Ambition"
           >
-            Discover curated luxury residences, sky-high apartments, iconic penthouses, elegant
-            bungalows, weekend villas, and premium plots crafted for those who seek exceptional
-            living, timeless design, and lasting value.
+            Discover strategic Real Estate opportunities for investment, leasing and acquisition,
+            <br className="desktop-break" /> backed by Expert Property Advisory and end-to-end Real Estate services.
           </SectionTitle>
 
           <div className="service-grid">
-            {serviceCards.map((card, index) => (
+            {serviceCards.map((card) => (
               <article
                 className="service-card"
-                data-reveal="card"
-                style={{ transitionDelay: `${index * 80}ms` }}
                 key={card.title}
               >
-                <img src={asset(card.image)} alt="" />
+                <img src={asset(card.image)} alt={card.alt} loading="lazy" />
                 <div>
                   <h3>{card.title}</h3>
                   <p>{card.text}</p>
+                  <a className="button button--secondary" href={card.href} aria-label={`Explore ${card.title}`}>
+                    Explore <span aria-hidden="true">&rarr;</span>
+                  </a>
                 </div>
               </article>
             ))}
           </div>
 
-          <div className="center-action" data-reveal="up">
-            <a className="button button--secondary" href="#commercial-leasing">
-              Explore Luxury Living <span aria-hidden="true">→</span>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -110,7 +104,7 @@ export default function Home() {
         <div className="container metrics__inner">
           <div className="section-title" data-reveal="up">
             <span className="eyebrow">Proven Excellence</span>
-            <h2>Built on Trust<br />Measured by Results</h2>
+            <h2>Built on Trust<br /><em>Measured by Results</em></h2>
           </div>
           <div className="metric-panel" data-reveal="panel">
             {metrics.map((metric, index) => {
@@ -123,54 +117,6 @@ export default function Home() {
               </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="ecosystem section-band pattern-corner" id="co-working">
-        <div className="container ecosystem__grid">
-          <SectionTitle
-            eyebrow="Synergistic Growth"
-            title="An Ecosystem Built on Relationships"
-            accent="Relationships"
-            align="left"
-          >
-            A great workspace should make business easier. From finding the right location to
-            managing everyday essentials, we help you work without the usual office overheads.
-          </SectionTitle>
-
-          <div className="ecosystem__map" data-reveal="up">
-            <div className="ecosystem__visual" data-reveal="scale">
-              <EcosystemDiagram />
-            </div>
-            {stakeholders.map((item, index) => (
-              <article
-                className={`stakeholder stakeholder--${index + 1}`}
-                tabIndex={0}
-                data-reveal="left"
-                style={{ transitionDelay: `${index * 100}ms` }}
-                key={item.title}
-              >
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="testimonials section-band section-band--white pattern-field">
-        <div className="container">
-          <SectionTitle eyebrow="Clients Endorsements" title="What our Client Says" accent="Client Says">
-            Hear from businesses and investors who have partnered with Corporate Lion.
-          </SectionTitle>
-
-          <TestimonialSlider />
-
-          <div className="center-action" data-reveal="up">
-            <a className="button button--secondary" href="#reviews">
-              <span aria-hidden="true">G</span> View All Google Reviews
-            </a>
           </div>
         </div>
       </section>
@@ -196,9 +142,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="insights section-band" id="commercial-leasing">
+      <section className="testimonials section-band section-band--white pattern-field">
+        <div className="container">
+          <SectionTitle eyebrow="Clients Endorsements" title="What our Client Says" accent="Client Says">
+            Hear from businesses and investors who have partnered with Corporate Lion.
+          </SectionTitle>
+
+          <TestimonialSlider />
+
+          <div className="center-action" data-reveal="up">
+            <a className="button button--secondary" href="https://www.google.com/maps/search/?api=1&query=Corporate+Lion+Ahmedabad" target="_blank" rel="noreferrer">
+              <span aria-hidden="true">G</span> View All Google Reviews
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="insights section-band" id="market-insights">
         <div className="container insights__grid">
-          <SectionTitle eyebrow="Market Intelligence" title="Insights & Perspectives" align="left" />
+          <SectionTitle eyebrow="Market Intelligence" title="Insights & Perspectives" accent="Perspectives" align="left" />
 
           <article className="featured-insight" data-reveal="image">
             <img src={asset("Office Absorption Trends 2026.svg")} alt="Office towers viewed from below" />
@@ -234,7 +196,7 @@ export default function Home() {
           </div>
 
           <div className="center-action insights__action" data-reveal="up">
-            <a className="button button--secondary" href="#market-insights">
+            <a className="button button--secondary" href="/insights">
               Explore All Insights
             </a>
           </div>
@@ -244,6 +206,8 @@ export default function Home() {
       <AdvisoryContact />
 
       <SiteFooter />
+
+
     </main>
   );
 }

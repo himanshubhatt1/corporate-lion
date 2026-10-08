@@ -1,80 +1,65 @@
+import type { Metadata } from "next";
 import { asset } from "../../lib/assets";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
 import {
   featuredVideos,
-  insightCategories,
   trendCards
 } from "../../data/insights";
+
+export const metadata: Metadata = {
+  title: "Insights & Perspectives | Corporate Lion",
+  description: "Real estate market news, property perspectives, and conversations from Corporate Lion."
+};
 
 export default function InsightsPage() {
   return (
     <main className="insights-page">
-      <div className="insights-shell">
         <section className="insights-hero" id="top">
           <img
             className="insights-hero__image"
-            src={asset("insights-hero-compass.png")}
+            src={asset("insights/hero-office.webp")}
             alt=""
           />
-          <SiteHeader tone="light" />
+          <SiteHeader tone="dark" />
 
           <div className="insights-hero__content" data-reveal="left">
-            <span className="insights-eyebrow">Research &amp; Perspectives</span>
-            <h1>Intelligence for a market in motion.</h1>
-            <p>
-              Timely news, grounded analysis, and practical perspectives for leaders navigating
-              India&apos;s real estate landscape.
-            </p>
+            <span className="insights-eyebrow">Insights &amp; Perspectives</span>
+            <h1>The Right Decision Begins<br />Before the <em>Right Property.</em></h1>
           </div>
-        </section>
-
-        <section className="insights-categories" aria-label="Insight categories">
-          {insightCategories.map((item, index) => (
-            <a href="#market-news" data-reveal="up" style={{ transitionDelay: `${index * 55}ms` }} key={item}>
-              <span />
-              {item}
-            </a>
-          ))}
         </section>
 
         <section className="market-news" id="market-news">
           <div className="insights-container">
-            <div className="insights-title insights-title--light" data-reveal="up">
+            <div className="insights-title" data-reveal="up">
               <span>Market News &amp; Trends</span>
-              <h2>What is shaping real estate now.</h2>
-              <p>
-                Editorial perspectives on demand, infrastructure, occupier behaviour, yields, and
-                the corridors drawing tomorrow&apos;s capital.
-              </p>
+              <h2>The Market Never Stops.<br /><em>Neither Do We</em></h2>
+              <p>What&apos;s Shaping Real Estate Today</p>
             </div>
 
             <article className="lead-story" data-reveal="image">
-              <img src={asset("a.featured-story.svg")} alt="City skyline reflected from a suspension bridge" />
+              <img src={asset("insights/market-skyline.webp")} alt="City skyline at sunset" />
               <div>
-                <span>Commercial Real Estate Featured</span>
+                <span>Commercial Real Estate · Featured</span>
                 <h3>
                   India&apos;s next office cycle: why quality, flexibility, and talent access are
                   defining demand
                 </h3>
-                <a href="#guides">Continue Read: Corporate Lion Research</a>
               </div>
             </article>
 
             <div className="trend-grid">
-              {trendCards.map((card, index) => (
+              {trendCards.map((card) => (
                 <article
                   className="trend-card"
-                  data-reveal="card"
-                  style={{ transitionDelay: `${index * 90}ms` }}
-                  key={card.title}
+                  key={card.id}
                 >
-                  <img src={asset(card.image)} alt="" />
+                  <img src={asset(card.image)} alt={card.alt} loading="lazy" />
                   <div>
                     <span>{card.tag}</span>
                     <h3>{card.title}</h3>
                     <p>{card.text}</p>
-                    <a href="#guides">Read Perspective</a>
+                    <a href={card.href} aria-label={`Read perspective: ${card.title}`}>Read Perspective</a>
                   </div>
                 </article>
               ))}
@@ -84,58 +69,26 @@ export default function InsightsPage() {
 
         <section className="property-guides" id="guides">
           <div className="insights-container">
-            <div className="guide-heading">
-              <div data-reveal="left">
-                <span className="insights-eyebrow">Property Knowledge</span>
-                <h2>
-                  Guides for better
-                  <em>decisions.</em>
-                </h2>
-              </div>
-              <p data-reveal="right">
-                Search-friendly, practical explainers created for occupiers, investors, developers,
-                and property owners.
-              </p>
-            </div>
-
-            <article className="guide-banner" data-reveal="panel">
-              <div>
-                <span>Featured Decision Guide</span>
-                <h3>
-                  Build conviction before
-                  <br />
-                  you commit capital.
-                </h3>
-                <div className="guide-banner__actions">
-                  <a href="#newsletter">Enquire Now</a>
-                  <a href="#videos">Watch Briefing</a>
-                </div>
-              </div>
-              <img src={asset("div.knowledge-visual.svg")} alt="Grade A office towers" />
-            </article>
-
             <div className="video-heading" id="videos" data-reveal="up">
               <span>Featured Videos</span>
               <h2>
-                Watch. Explore. <em>Discover.</em>
+                Stories Built on <em>Trust</em>
               </h2>
             </div>
 
             <div className="featured-video-grid">
-              {featuredVideos.map((video, index) => (
+              {featuredVideos.map((video) => (
                 <article
                   className="featured-video"
-                  data-reveal="image"
-                  style={{ transitionDelay: `${index * 90}ms` }}
                   key={video.title}
                 >
-                  <img src={asset(video.image)} alt="" />
+                  <img src={asset(video.image)} alt="" loading="lazy" />
                   <button type="button" aria-label={`Play ${video.title}`}>
                     <span />
                   </button>
                   <div>
                     <span>{video.tag}</span>
-                    <h3>{video.title}</h3>
+                    <h3>{video.titleLines[0]}<br />{video.titleLines[1]}</h3>
                     <p>{video.text}</p>
                   </div>
                 </article>
@@ -147,7 +100,7 @@ export default function InsightsPage() {
         <section className="video-intelligence">
           <div className="insights-container video-intelligence__grid">
             <div className="podcast-card" data-reveal="image">
-              <img src={asset("Watch The 5% Rule video on YouTube.svg")} alt="The Property Trap video cover" />
+              <img src={asset("insights/property-trap.webp")} alt="The Property Trap — a conversation about real estate investment" loading="lazy" />
             </div>
             <div className="video-intelligence__copy" data-reveal="right">
               <span className="insights-eyebrow">Video Intelligence</span>
@@ -156,7 +109,7 @@ export default function InsightsPage() {
                 Conversations and explainers that bring investment thinking, property strategy, and
                 market dynamics into sharper focus.
               </p>
-              <a href="#videos">Open Video Hub</a>
+              <a href="/videos">Explore All Videos</a>
             </div>
           </div>
         </section>
@@ -164,24 +117,19 @@ export default function InsightsPage() {
         <section className="newsletter-section" id="newsletter">
           <div className="newsletter-orbits" aria-hidden="true" />
           <div className="insights-container newsletter-section__inner" data-reveal="up">
-            <span className="insights-eyebrow">Coming Soon</span>
-            <small>Corporate Lion Intelligence</small>
-            <h2>
-              Perspective, delivered with
-              <em>purpose.</em>
-            </h2>
+            <span className="insights-eyebrow">Corporate Lion Newsletter</span>
+            <h2>Knowledge. Markets. Growth</h2>
             <p>
-              A considered briefing of market shifts, investment signals, new research, and selected
-              opportunities without the noise.
+              A carefully curated edition featuring market insights, investment opportunities,
+              policy updates, and perspectives shaping India&apos;s real estate future.
             </p>
             <form className="newsletter-form">
-              <input type="email" placeholder="Enter your corporate email" aria-label="Corporate email" />
+              <input type="email" placeholder="Enter your email" aria-label="Email address for the Corporate Lion newsletter" />
               <button type="button">Notify Me</button>
             </form>
           </div>
         </section>
-      </div>
-      <SiteFooter />
+        <SiteFooter />
     </main>
   );
 }

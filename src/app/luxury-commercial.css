@@ -1,0 +1,20 @@
+/* Luxury Commercial shares the alternating property-card layout. */
+.luxury-commercial-page .residential-hero__content { padding-top: calc(214 * var(--residential-unit)); }
+.luxury-commercial-page .residential-hero__image { object-position: center; }
+.luxury-commercial-page .residential-hero::before { background: linear-gradient(90deg, #090807ae, #09080755 65%, #09080733); }
+.luxury-commercial-page .residential-collection { padding-bottom: calc(160 * var(--residential-unit)); }
+.luxury-commercial-page .residential-card__description { margin-top: calc(46 * var(--residential-unit)); }
+.luxury-commercial-page .residential-card:first-child .residential-card__description { margin-top: calc(68 * var(--residential-unit)); }
+@media (max-width: 1100px) {
+  .luxury-commercial-page .residential-hero__content { padding-top: 104px; }
+  .luxury-commercial-page .residential-card__description,
+  .luxury-commercial-page .residential-card:first-child .residential-card__description { margin-top: 30px; }
+}
+@media (max-width: 700px) {
+  .luxury-commercial-page .residential-hero { min-height: 570px; }
+  .luxury-commercial-page .residential-hero__content { padding-top: 112px; }
+  .luxury-commercial-page .residential-hero__image { object-position: 62% center; }
+  .luxury-commercial-page .residential-collection { padding-bottom: 56px; }
+  .luxury-commercial-page .residential-card__description,
+  .luxury-commercial-page .residential-card:first-child .residential-card__description { margin-top: 26px; }
+}

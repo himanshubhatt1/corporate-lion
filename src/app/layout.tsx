@@ -9,6 +9,10 @@ import "./services.css";
 import "./advisory.css";
 import "./contact.css";
 import "./coworking.css";
+import "./home-reference.css";
+import "./insights.css";
+import "./careers.css";
+import "./projects.css";
 
 export const metadata: Metadata = {
   title: "Corporate Lion | Strategic Real Estate Advisory",

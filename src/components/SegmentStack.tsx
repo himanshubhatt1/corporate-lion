@@ -1,74 +1,104 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { serviceSegments } from "../data/services";
+import { serviceSegments, servicesIntroduction } from "../data/services";
 import { asset } from "../lib/assets";
 
-const AUTOPLAY_MS = 6000;
-
-/**
- * A deck of property segments: the front card is open, the others stay layered behind it
- * with only their top edge showing. Picking a layer (or the autoplay) brings it forward.
- */
+/** Native sticky positioning keeps wheel, touch and keyboard scrolling reversible. */
 export function SegmentStack() {
-  const count = serviceSegments.length;
-  const [active, setActive] = useState(count - 1);
-  const [inView, setInView] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const section = useRef<HTMLElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
   const deck = useRef<HTMLDivElement>(null);
+  const cards = useRef<(HTMLElement | null)[]>([]);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const node = deck.current;
-    if (!node || !("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: 0.35 });
-    observer.observe(node);
-    return () => observer.disconnect();
+    const root = section.current!;
+    const sticky = panel.current!;
+    const stack = deck.current!;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+    let step = 0;
+    let hold = 0;
+    let top = 0;
+    let current = -1;
+
+    function render() {
+      frame = 0;
+      const distance = Math.max(0, top - root.getBoundingClientRect().top);
+      const progress = Math.max(0, (distance - hold) / step);
+      let next = 0;
+      const travel = stack.clientHeight + 40;
+      cards.current.forEach((card, index) => {
+        if (!card) return;
+        const portion = index === 0 ? 1 : Math.min(1, Math.max(0, progress - index + 1));
+        // Ease the final part of each arrival without detaching motion from scroll.
+        const eased = motion.matches ? (portion >= .55 ? 1 : 0) : 1 - Math.pow(1 - portion, 3);
+        card.style.setProperty("--arrival", String((1 - eased) * travel));
+        card.style.visibility = eased > 0 ? "visible" : "hidden";
+        if (portion >= .55) next = index;
+      });
+      if (next !== current) { current = next; setActive(next); }
+    }
+
+    function measure() {
+      const headerSpace = Math.max(64, Math.min(96, window.innerWidth * .05));
+      // Short windows keep the deck pinned too; its heading can scroll above the viewport.
+      // Reduced motion changes how cards arrive, never whether they are stacked.
+      top = Math.min(headerSpace, window.innerHeight - sticky.offsetHeight);
+      sticky.style.top = `${top}px`;
+      step = Math.max(420, window.innerHeight * .8);
+      hold = window.innerHeight * .2;
+      root.style.height = `${sticky.offsetHeight + step * (serviceSegments.length - 1) + hold * 2}px`;
+      render();
+    }
+
+    function schedule() { if (!frame) frame = requestAnimationFrame(render); }
+    // Recalculate pinning when responsive content changes the deck's natural height.
+    measure();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", measure);
+    motion.addEventListener("change", measure);
+    const observer = new ResizeObserver(measure);
+    observer.observe(sticky);
+    document.fonts.ready.then(measure);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", measure);
+      motion.removeEventListener("change", measure);
+    };
   }, []);
 
-  useEffect(() => {
-    if (!inView || isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer = window.setTimeout(() => setActive((current) => (current + 1) % count), AUTOPLAY_MS);
-    return () => window.clearTimeout(timer);
-  }, [active, count, inView, isPaused]);
-
-  return (
-    <div
-      className="segment-stack"
-      data-reveal="panel"
-      ref={deck}
-      style={{ "--layers": count - 1 } as React.CSSProperties}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocus={() => setIsPaused(true)}
-      onBlur={() => setIsPaused(false)}
-    >
-      {serviceSegments.map((segment, index) => {
-        const depth = (active - index + count) % count;
-        const isFront = depth === 0;
-        return (
-          <article
-            className={`segment-card${isFront ? " is-front" : ""}`}
-            style={{ "--depth": depth } as React.CSSProperties}
-            key={segment.number}
-          >
-            <button className="segment-card__tab" type="button" onClick={() => setActive(index)}>
-              <span>{segment.number}</span>
-              {segment.title}
-            </button>
-            <div className="segment-card__body" aria-hidden={!isFront}>
-              <div className="segment-card__copy">
-                <strong>{segment.number}</strong>
-                <h3>{segment.title}</h3>
-                <span>{segment.tagline}</span>
-                <p>{segment.text}</p>
-              </div>
-              <div className="segment-card__image">
-                <img src={asset(segment.image)} alt={segment.alt} />
-              </div>
-            </div>
-          </article>
-        );
-      })}
+  return <section className="services-scroll" id="service-segments" data-enhanced="true" ref={section} aria-labelledby="services-segments-title">
+    <div className="services-scroll__panel" ref={panel}>
+      <div className="services-section-heading">
+        <h2 id="services-segments-title">Our Real <span>Estate Services</span></h2>
+        <p>{servicesIntroduction}</p>
+      </div>
+      <a className="services-skip" href="#services-clients">Skip to our clients</a>
+      <div className="segment-stack" ref={deck}>
+        {serviceSegments.map((segment, index) => <article
+          key={segment.number}
+          ref={node => { cards.current[index] = node; }}
+          className="segment-card"
+          style={{ "--card-index": index } as React.CSSProperties}
+          aria-hidden={active !== index ? true : undefined}
+          inert={active !== index}
+        >
+          <div className="segment-card__copy">
+            <strong>{segment.number}</strong>
+            <h3>{segment.title}</h3>
+            <span>{segment.tagline}</span>
+            <p>{segment.text}</p>
+            <a className="services-button" href={segment.href}>{segment.action} <span aria-hidden="true">→</span></a>
+          </div>
+          <div className="segment-card__visual">
+            <img className="segment-card__image" src={asset(segment.image)} alt={segment.alt} width={624} height={420} />
+          </div>
+        </article>)}
+      </div>
     </div>
-  );
+  </section>;
 }

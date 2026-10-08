@@ -1,23 +1,31 @@
 export const serviceCards = [
   {
-    title: "Luxury Residential",
-    text: "Premium residential properties in prime locations, offering sophisticated living, modern amenities, and exceptional lifestyle value.",
-    image: "da1c390093512c8aeb2f507352d412551c65835b.png"
-  },
-  {
     title: "Commercial",
     text: "Strategically located commercial spaces designed to support businesses with excellent connectivity, functionality, and growth potential.",
-    image: "Rectangle 46.svg"
+    image: "home/commercial.webp",
+    alt: "Modern commercial campus beside a connected city highway",
+    href: "/luxury-commercial"
+  },
+  {
+    title: "Luxury Residential",
+    text: "Premium residential properties in prime locations, offering sophisticated living, modern amenities, and exceptional lifestyle value.",
+    image: "home/luxury-residential.webp",
+    alt: "Illuminated luxury residence with landscaped gardens",
+    href: "/luxury-residential"
   },
   {
     title: "Industrial",
     text: "Well-planned industrial properties for manufacturing, warehousing, and logistics, supported by robust infrastructure.",
-    image: "Img_ Ready office (2).svg"
+    image: "home/industrial.webp",
+    alt: "Industrial processing facility with large blue towers",
+    href: "/luxury-industrial"
   },
   {
     title: "SEZ",
     text: "Business-ready properties within Special Economic Zones, offering strategic locations, modern infrastructure.",
-    image: "Img_ Ready office (3).svg"
+    image: "home/sez.webp",
+    alt: "Aerial view of a large industrial Special Economic Zone",
+    href: "/sez"
   }
 ];
 
@@ -70,17 +78,17 @@ export const videos = [
   {
     client: "Apex Finserve Group",
     title: "Structuring a 250,000 Sq. Ft. Financial Headquarters",
-    image: "Rectangle 31.svg"
+    image: "home/client-apex.webp"
   },
   {
     client: "Chauhan Family Trust",
     title: "Unlocking Generational Value from Prime Land",
-    image: "Img_ Ready office (1).svg"
+    image: "home/client-chauhan.webp"
   },
   {
     client: "Horizon Developers",
     title: "Underwriting & Positioning a Grade-A Tech Park",
-    image: "Office Absorption Trends 2026.svg"
+    image: "home/client-horizon.webp"
   }
 ];
 

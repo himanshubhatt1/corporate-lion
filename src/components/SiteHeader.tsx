@@ -54,7 +54,7 @@ export function SiteHeader({ tone = "dark" }: SiteHeaderProps) {
           </button>
           <nav className="masthead__nav" id="site-navigation" aria-label="Main navigation">
             {siteNav.map((item) => {
-              const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              const isActive = !item.href.includes("#") && (pathname === item.href || pathname.startsWith(`${item.href}/`));
               return (
                 <a
                   className={`masthead__link${isActive ? " is-active" : ""}`}
@@ -67,9 +67,6 @@ export function SiteHeader({ tone = "dark" }: SiteHeaderProps) {
                 </a>
               );
             })}
-            <a className="masthead__cta" href="/contact" onClick={() => setIsOpen(false)}>
-              Let&apos;s Connect <span aria-hidden="true">→</span>
-            </a>
           </nav>
         </div>
       </header>

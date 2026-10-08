@@ -1,0 +1,15 @@
+/* Industrial uses the same responsive service cards as the luxury pages. */
+.luxury-industrial-page .residential-hero { height: calc(806 * var(--residential-unit)); }
+.luxury-industrial-page .residential-hero__image { object-position: center; }
+.luxury-industrial-page .residential-hero::before { background: linear-gradient(90deg, #091013b3, #09101375 64%, #09101326); }
+.luxury-industrial-page .residential-hero p { max-width: calc(900 * var(--residential-unit)); }
+.luxury-industrial-page .residential-card__description { margin-top: calc(40 * var(--residential-unit)); }
+@media (max-width: 1100px) {
+  .luxury-industrial-page .residential-hero p { max-width: 640px; }
+  .luxury-industrial-page .residential-card__description { margin-top: 28px; }
+}
+@media (max-width: 700px) {
+  .luxury-industrial-page .residential-hero { height: auto; min-height: 570px; }
+  .luxury-industrial-page .residential-hero__image { object-position: 58% center; }
+  .luxury-industrial-page .residential-card__description { margin-top: 26px; }
+}

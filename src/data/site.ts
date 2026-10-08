@@ -1,18 +1,23 @@
+import { featuredBlog } from "./blog";
+
 export const siteNav = [
-  { label: "Home", href: "/" },
   { label: "Our Services", href: "/our-services" },
+  { label: "Projects", href: "/projects" },
   { label: "Commercial Leasing", href: "/commercial-leasing" },
-  { label: "Co Working", href: "/co-working" },
-  { label: "Contact", href: "/contact" }
+  { label: "Co-Working", href: "/co-working" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blogs", href: featuredBlog.href },
+  { label: "About", href: "/contact" }
 ];
 
 export const footerNavigation = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/#home" },
   { label: "Our Services", href: "/our-services" },
-  { label: "Selected Projects", href: "/our-services" },
-  { label: "Market Insights", href: "/insights" },
-  { label: "Contact Desk", href: "/contact" }
+  { label: "Projects", href: "/projects" },
+  { label: "Co-working", href: "/co-working" },
+  { label: "Commercial Leasing", href: "/commercial-leasing" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blogs", href: featuredBlog.href }
 ];
 
 export const advisoryPractice = [
@@ -28,19 +33,19 @@ export const legalLinks = ["Privacy Policy", "Terms of Engagement", "RERA Compli
 
 export const interestOptions = [
   "Office Leasing",
-  "Buying / Acquisition",
-  "Asset Monetization",
-  "Landowner Advisory",
-  "Developer Advisory",
-  "Investment Opportunities",
-  "Other Strategic Inquiry"
+  "Retail Leasing",
+  "Pre-Leased Investment",
+  "Luxurious Residential",
+  "Co-Working / Managed Spaces",
+  "Plots / Land Owner Advisory",
+  "Industrial"
 ];
 
 export const contactDetails = [
   {
     icon: "pin",
     title: "Corporate Headquarters",
-    lines: ["Level 18, Express Towers, Nariman Point / BKC,", "Mumbai, Maharashtra 400021, India"]
+    lines: ["1102–1103, Binori Bsquare 3, Sindhu Bhavan Road,", "Bodakdev, Ahmedabad, Gujarat 380054"]
   },
   {
     icon: "phone",
@@ -50,6 +55,6 @@ export const contactDetails = [
   {
     icon: "mail",
     title: "Electronic Mail",
-    lines: ["advisory@corporatelion.in", "confidential@corporatelion.in"]
+    lines: ["info@corporatelion.com"]
   }
 ];
