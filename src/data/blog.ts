@@ -1,5 +1,5 @@
 export const featuredBlog = {
-  href: "/blogs/the-future-of-real-estate",
+  href: "/insights/the-future-of-real-estate",
   title: "The Future of Real Estate: Why Smart Investments Begin with the Right Location",
   summary: "Explore how location, emerging destinations, and infrastructure shape real estate opportunities.",
   author: "Real Estate Insights Team",

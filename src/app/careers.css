@@ -215,3 +215,7 @@
   .careers-page *, .careers-page *::before, .careers-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .career-timeline::after { transform: scaleY(0); }
 }
+
+.career-application__description { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #d9d3ca; }
+.career-application__description h3 { margin-bottom: 10px; }
+.career-application__description p { margin: 0; color: #746c64; font-size: clamp(13px, calc(12 * var(--application-unit)), 16px); line-height: 1.65; }

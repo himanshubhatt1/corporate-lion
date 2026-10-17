@@ -33,7 +33,7 @@
 .insights-page .lead-story span { font-size: calc(11 * var(--insights-unit)); font-weight: 500; letter-spacing: .08em; }
 .insights-page .lead-story h3 { max-width: 95%; margin: calc(12 * var(--insights-unit)) auto 0; color: #55514c !important; font-size: calc(48 * var(--insights-unit)); line-height: 1; }
 .insights-page .trend-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(28 * var(--insights-unit)); }
-.insights-page .trend-card { padding: calc(18 * var(--insights-unit)); border: 1px solid #ead6c0; background: #fff; }
+.insights-page .trend-card { position: relative; padding: calc(18 * var(--insights-unit)); border: 1px solid #ead6c0; background: #fff; }
 .insights-page .trend-card img { width: 100%; height: auto; aspect-ratio: 608 / 346; object-fit: cover; border-radius: calc(3 * var(--insights-unit)); }
 .insights-page .trend-card > div { min-height: 0; padding: calc(18 * var(--insights-unit)) 0 calc(8 * var(--insights-unit)); }
 .insights-page .trend-card span { font-size: calc(16 * var(--insights-unit)); font-weight: 400; letter-spacing: .08em; }
@@ -128,3 +128,7 @@
   .insights-page .newsletter-form button { font-size: 10px; }
   .insights-page .newsletter-orbits { width: 160%; left: -30%; }
 }
+
+/* Make the article image, category, and title open the same detail link. */
+.insights-page .trend-card a::after { position: absolute; inset: 0; content: ""; }
+.insights-page .trend-card:focus-within { outline: 2px solid #b87333; outline-offset: 3px; }

@@ -24,6 +24,19 @@ export default function Home() {
       <section
         className="hero"
       >
+        <video
+          className="hero__video"
+          src="/videos/home-banner.mp4"
+          poster={asset("home/hero.webp")}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+          aria-hidden="true"
+          tabIndex={-1}
+        />
         <SiteHeader tone="dark" />
         <div className="hero__content">
           <h1>Roar Ahead in Real Estate</h1>
@@ -139,6 +152,12 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <div className="center-action">
+            <a className="button button--secondary" href="/videos">
+              View All Videos <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -151,7 +170,7 @@ export default function Home() {
           <TestimonialSlider />
 
           <div className="center-action" data-reveal="up">
-            <a className="button button--secondary" href="https://www.google.com/maps/search/?api=1&query=Corporate+Lion+Ahmedabad" target="_blank" rel="noreferrer">
+            <a className="button button--secondary" href="https://www.google.com/maps/place/Corporate+Lion+Pro+LLP/@23.0406587,72.5063811,17z/data=!4m8!3m7!1s0x395e9b6d5b7f5e09:0xad36ada48d754c74!8m2!3d23.0406587!4d72.5063811!9m1!1b1!16s%2Fg%2F11ljqyl_y3?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3Dd" target="_blank" rel="noreferrer">
               <span aria-hidden="true">G</span> View All Google Reviews
             </a>
           </div>

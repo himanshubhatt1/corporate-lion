@@ -70,7 +70,7 @@
 .home-page .testimonials .section-title p { font-size: min(.94vw, 18px); }
 .home-page .review-slider__controls { gap: min(1.04vw, 20px); margin-bottom: min(2.5vw, 48px); }
 .home-page .review-slider__controls button { width: min(3.75vw, 72px); height: min(3.75vw, 72px); }
-.home-page .review-slider__viewport { padding-top: min(1.67vw, 32px); }
+.home-page .review-slider__viewport { padding-top: min(2.60vw, 50px); }
 .home-page .testimonials .testimonial { min-height: min(16.67vw, 320px); padding: min(3.75vw, 72px) min(2.08vw, 40px) min(2.6vw, 50px); }
 .home-page .testimonials .testimonial > span { width: min(3.33vw, 64px); height: min(3.33vw, 64px); font-size: min(1.04vw, 20px); }
 .home-page .testimonials .testimonial h3 { font-size: min(1.04vw, 20px); }
@@ -193,3 +193,15 @@
   .home-page .advisory-contact .inquiry-form .button { min-height: 48px; margin-top: 24px; padding: 0 10px; font-size: 9px; }
   .home-page .advisory-contact .inquiry-form__note { margin-top: 16px; font-size: 10px; }
 }
+
+/* Looping background film and light SEZ promotion. */
+.home-page .hero__video { z-index: 0; animation: none; transform: none; pointer-events: none; }
+.home-page .hero::before { pointer-events: none; }
+.home-page .sez-modal__panel { max-height: calc(100dvh - 40px); overflow-y: auto; color: #302a23; background: #fffaf3; border-color: #e5d5c2; }
+.home-page .sez-modal h2, .home-page .sez-modal__features h3 { color: #302a23 !important; }
+.home-page .sez-modal h2 em { color: #a65e23 !important; }
+.home-page .sez-modal__content > p, .home-page .sez-modal__features p { color: #6c6257 !important; }
+.home-page .sez-modal__close { background: #fffaf3; border-radius: 50%; }
+.home-page .sez-modal__close span { background: #40362c; }
+.home-page .sez-modal__close:hover span { background: #a65e23; }
+.home-page .sez-modal :is(button,a):focus-visible { outline: 2px solid #a65e23; outline-offset: 3px; }

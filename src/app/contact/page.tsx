@@ -38,7 +38,7 @@ export default function ContactPage() {
       </section>
 
       <section className="contact-values contact-container" aria-label="Our vision and mission">
-        {values.map((value) => <article className="contact-value" key={value.title} data-reveal="up">
+        {values.map((value, index) => <article className="contact-value" key={value.title} data-reveal="up" style={{ transitionDelay: `${index * 150}ms` }}>
           <div className="contact-value__heading"><h2>{value.title}</h2><span className="contact-value__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
             {value.icon === "vision" ? <><path d="M2 16S7 7 16 7s14 9 14 9-5 9-14 9S2 16 2 16Z" /><circle cx="16" cy="16" r="5" /></> : <><circle cx="15" cy="17" r="12" /><circle cx="15" cy="17" r="7" /><path d="m15 17 13-13m-6-2v7h7" strokeLinecap="round" strokeLinejoin="round" /></>}
           </svg></span></div>
@@ -87,15 +87,6 @@ export default function ContactPage() {
         <div className="contact-wide contact-conversation__content" data-reveal="up"><span className="contact-eyebrow">Private Advisory Desk</span><h2 id="contact-conversation-title">Every Great Opportunity<br />Begins with a Conversation.</h2><p>Every significant real estate decision begins with a precise brief, trusted<br className="contact-desktop-break" /> counsel, and a clear path to action.</p><div className="contact-conversation__actions"><a className="contact-button" href={inquiry}>Submit Inquiry <span aria-hidden="true">→</span></a><a className="contact-button contact-button--outline" href={phoneHref(phones[0])}>Call the Desk <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6a1 1 0 0 0-1 .25l-2.2 2.2a15 15 0 0 1-6.6-6.6l2.2-2.2a1 1 0 0 0 .25-1A11.4 11.4 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1Z" /></svg></a></div></div>
       </section>
 
-      <section className="contact-desk" id="contact-desk" aria-labelledby="contact-desk-title">
-        <div className="contact-container"><div className="contact-section-heading" data-reveal="up"><h2 id="contact-desk-title">Let’s Talk About Your<br /><span>Next Opportunity.</span></h2><p>Whether you are looking to lease Grade-A office space, acquire commercial assets, develop prime land, or unlock strategic value, our advisory desk is ready to assist.</p></div>
-          <div className="contact-desk__details">
-            <div className="contact-desk__item"><img src={asset("location.svg")} alt="" /><div><h3>Corporate Headquarters</h3><a href={directions} target="_blank" rel="noreferrer">{headquarters.lines.map((line) => <span key={line}>{line}</span>)}</a></div></div>
-            <div className="contact-desk__item"><img src={asset("phone.svg")} alt="" /><div><h3>Direct Advisory Desk</h3><div className="contact-desk__phones">{phones.map((phone, index) => <span key={phone}>{index > 0 && " / "}<a href={phoneHref(phone)}>{phone}</a></span>)}</div></div></div>
-            <div className="contact-desk__item"><img src={asset("mail.svg")} alt="" /><div><h3>Electronic Mail</h3><a href={"mailto:" + email}>{email}</a></div></div>
-          </div>
-        </div>
-      </section>
 
       <section className="contact-location" id="location" aria-labelledby="contact-location-title">
         <div className="contact-container">

@@ -61,6 +61,9 @@ export function CareerApplicationForm({ position }: { position: CareerPosition }
 
   return (
     <form className="career-application" onSubmit={prepareApplication} onChange={() => setEmailDraft("")}>
+      <div className="career-application__description">
+        <p>{position.description}</p>
+      </div>
       <h3>Apply for this role</h3>
       <div className="career-application__fields">
         <label>Full Name *<input name="fullName" autoComplete="name" required maxLength={120} pattern=".*\S.*" title="Enter your full name." /></label>

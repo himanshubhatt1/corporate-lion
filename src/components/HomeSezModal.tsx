@@ -3,44 +3,24 @@
 import { useEffect, useRef, useState } from "react";
 import { asset } from "../lib/assets";
 
-const MODAL_STORAGE_KEY = "corporate-lion-sez-modal-seen";
-const MODAL_DELAY_MS = 7000;
+const MODAL_DELAY_MS = 2 * 60 * 1000;
 
 export function HomeSezModal() {
   const [isOpen, setIsOpen] = useState(false);
   const panel = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const isPreview = new URLSearchParams(window.location.search).has("previewSezModal");
-
-    if (isPreview) {
-      setIsOpen(true);
-      return;
-    }
-
-    // Shown once per browsing session, so a later visit sees it again.
-    let seen = false;
-    try {
-      seen = window.sessionStorage.getItem(MODAL_STORAGE_KEY) === "true";
-    } catch {
-      seen = false;
-    }
-
-    if (seen) {
-      return;
-    }
-
-    const timer = window.setTimeout(() => {
-      try {
-        window.sessionStorage.setItem(MODAL_STORAGE_KEY, "true");
-      } catch {
-        // Storage can be unavailable in private mode; the modal still opens.
-      }
-      setIsOpen(true);
-    }, MODAL_DELAY_MS);
-
-    return () => window.clearTimeout(timer);
+    if (new URLSearchParams(window.location.search).has("previewSezModal")) setIsOpen(true);
   }, []);
+
+  useEffect(() => {
+    if (isOpen) return;
+    // Start a fresh two-minute wait on arrival and after each dismissal.
+    const timer = window.setInterval(() => {
+      if (!document.hidden && !document.querySelector("dialog[open]")) setIsOpen(true);
+    }, MODAL_DELAY_MS);
+    return () => window.clearInterval(timer);
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -48,6 +28,16 @@ export function HomeSezModal() {
     }
 
     const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Tab") {
+        const focusable = panel.current?.querySelectorAll<HTMLElement>('button, a[href], input, select, textarea, [tabindex="0"]');
+        const first = focusable?.[0];
+        const last = focusable?.[focusable.length - 1];
+        if (event.shiftKey && (document.activeElement === first || document.activeElement === panel.current)) {
+          event.preventDefault(); last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); first?.focus();
+        }
+      }
       if (event.key === "Escape") {
         setIsOpen(false);
       }
@@ -61,7 +51,7 @@ export function HomeSezModal() {
     return () => {
       document.body.classList.remove("modal-open");
       window.removeEventListener("keydown", onKeyDown);
-      previouslyFocused?.focus();
+      previouslyFocused?.focus({ preventScroll: true });
     };
   }, [isOpen]);
 
@@ -114,7 +104,7 @@ export function HomeSezModal() {
             </article>
           </div>
 
-          <a className="sez-modal__cta" href="/commercial-leasing" onClick={() => setIsOpen(false)}>
+          <a className="sez-modal__cta" href="/sez" onClick={() => setIsOpen(false)}>
             Explore the SEZ
           </a>
         </div>

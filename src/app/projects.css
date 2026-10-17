@@ -18,7 +18,7 @@
 .project-masterpiece h2 span, .project-inventory h2 span, .project-advisory h2 span { color: var(--project-copper); }
 .project-masterpiece p { max-width: calc(570 * var(--project-unit)); margin: 0 0 calc(26 * var(--project-unit)); font-size: max(12px, calc(18 * var(--project-unit))); color: #8e8a85 !important; line-height: 1.6; }
 .project-masterpiece p:last-child { margin-bottom: 0; }
-.project-masterpiece > img { width: 100%; height: calc(480 * var(--project-unit)); object-fit: cover; border-radius: 3px; }
+.project-masterpiece__video { width: 100%; height: calc(480 * var(--project-unit)); object-fit: cover; border-radius: 3px; }
 .project-inventory { padding: calc(110 * var(--project-unit)) 0 calc(100 * var(--project-unit)); background: #fffcfa; scroll-margin-top: 110px; }
 .project-inventory__heading { text-align: center; }
 .project-inventory h2 { font-size: calc(84 * var(--project-unit)); line-height: 1.08; }
@@ -121,7 +121,7 @@
   .project-masterpiece { width: calc(100% - 40px); padding: 60px 0; grid-template-columns: 1fr; gap: 30px; }
   .project-masterpiece h2 { font-size: clamp(43px, 10vw, 56px); }
   .project-masterpiece p { max-width: none; margin-top: 12px; font-size: 14px; }
-  .project-masterpiece > img { height: auto; aspect-ratio: 1.3; }
+  .project-masterpiece__video { height: auto; aspect-ratio: 1.3; }
   .project-inventory { padding: 60px 0; scroll-margin-top: 80px; }
   .project-inventory h2 { font-size: clamp(44px, 10vw, 56px); }
   .project-inventory__heading p { margin-top: 12px; font-size: 13px; }

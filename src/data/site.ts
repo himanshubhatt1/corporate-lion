@@ -1,12 +1,17 @@
-import { featuredBlog } from "./blog";
+export const serviceNavigation = [
+  { label: "Luxury Residential", href: "/luxury-residential" },
+  { label: "Commercial", href: "/luxury-commercial" },
+  { label: "Industrial", href: "/luxury-industrial" },
+  { label: "SEZ", href: "/sez" }
+];
 
 export const siteNav = [
   { label: "Our Services", href: "/our-services" },
   { label: "Projects", href: "/projects" },
-  { label: "Commercial Leasing", href: "/commercial-leasing" },
+  { label: "Commercial Leasing", href: "/luxury-commercial" },
   { label: "Co-Working", href: "/co-working" },
   { label: "Careers", href: "/careers" },
-  { label: "Blogs", href: featuredBlog.href },
+  { label: "Blogs", href: "/insights" },
   { label: "About", href: "/contact" }
 ];
 
@@ -17,7 +22,7 @@ export const footerNavigation = [
   { label: "Co-working", href: "/co-working" },
   { label: "Commercial Leasing", href: "/commercial-leasing" },
   { label: "Careers", href: "/careers" },
-  { label: "Blogs", href: featuredBlog.href }
+  { label: "Blogs", href: "/insights" }
 ];
 
 export const advisoryPractice = [
@@ -54,7 +59,7 @@ export const contactDetails = [
   },
   {
     icon: "mail",
-    title: "Electronic Mail",
+    title: "Mail Us At",
     lines: ["info@corporatelion.com"]
   }
 ];

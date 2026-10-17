@@ -45,3 +45,9 @@ export const projectCollections: Project[] = [
 ];
 
 export const projects = [...residentialProjects, ...projectCollections];
+
+// Existing local architecture film; replace the source when the project-specific film is supplied.
+export const projectMasterpieceVideo = {
+  source: "/videos/hero-office-building.web.mp4",
+  poster: "videos/office-campus.webp"
+};

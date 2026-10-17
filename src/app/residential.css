@@ -81,3 +81,9 @@
   .residential-page .site-footer .site-whatsapp { width: 44px; height: 44px; right: 18px; bottom: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { .residential-page *, .residential-page *::before, .residential-page *::after { transition: none !important; animation: none !important; } }
+
+.residential-button { border: 0; cursor: pointer; }
+.residential-contact { padding: clamp(44px, 5vw, 80px) 0; text-align: center; background: #fffcf7; }
+.residential-contact h2 { margin: 14px 0; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: clamp(36px, 3.5vw, 62px); line-height: 1.1; }
+.residential-contact h2 span { color: #b87333; }
+.residential-contact p { max-width: 620px; margin: 0 auto 26px; font-size: 14px; line-height: 1.7; color: #81796f; }

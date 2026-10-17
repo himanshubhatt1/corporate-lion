@@ -2,12 +2,12 @@ export const careerTabs = ["All", "Marketing", "Operations", "Sales"] as const;
 export type CareerTab = (typeof careerTabs)[number];
 
 export const careerPositions = [
-  { id: "01", title: "Senior Manager - Corporate Leasing", department: "Advisory", location: "Ahmedabad" },
-  { id: "02", title: "Manager-Industrial & Logistics", department: "Advisory", location: "Ahmedabad" },
-  { id: "03", title: "Investment Analyst", department: "Research", location: "Gift City" },
-  { id: "04", title: "Market Research Associate", department: "Research", location: "Gandhinagar" },
-  { id: "05", title: "Digital Marketing Executive", department: "Marketing", location: "Ahmedabad" },
-  { id: "06", title: "Transaction Coordinator", department: "Operations", location: "Ahmedabad" },
+  { id: "01", title: "Senior Manager - Corporate Leasing", department: "Advisory", location: "Ahmedabad", description: "Manage corporate leasing requirements, coordinate property evaluations and client discussions, and support negotiations from initial enquiry through to lease completion." },
+  { id: "02", title: "Manager-Industrial & Logistics", department: "Advisory", location: "Ahmedabad", description: "Help businesses identify suitable industrial and logistics properties, coordinate site visits, and work with owners and clients to progress leasing and acquisition requirements." },
+  { id: "03", title: "Investment Analyst", department: "Research", location: "Gift City", description: "Research real estate opportunities, analyse property and market data, and prepare financial assessments that support the advisory team in evaluating investments." },
+  { id: "04", title: "Market Research Associate", department: "Research", location: "Gandhinagar", description: "Gather and analyse real estate market information, track local property activity, and prepare research reports that support client advisory and business decisions." },
+  { id: "05", title: "Digital Marketing Executive", department: "Marketing", location: "Ahmedabad", description: "Plan and coordinate digital campaigns, develop property-focused content, and track campaign performance to support brand visibility and enquiries." },
+  { id: "06", title: "Transaction Coordinator", department: "Operations", location: "Ahmedabad", description: "Coordinate transaction documentation, maintain records and timelines, and liaise with clients and internal teams to support property transactions through to completion." },
 ] as const;
 export type CareerPosition = (typeof careerPositions)[number];
 

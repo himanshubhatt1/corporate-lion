@@ -42,11 +42,10 @@
 .contact-ecosystem { position: relative; overflow: hidden; isolation: isolate; padding: calc(110 * var(--contact-unit)) 0 calc(60 * var(--contact-unit)); background: #fff; }
 .contact-ecosystem::before { content: ""; position: absolute; z-index: -1; width: 28%; height: calc(370 * var(--contact-unit)); top: 0; right: 0; opacity: .25; background: url('/images/2395263_13783%20%5BConverted%5D%202.svg') right top / cover; }
 .contact-page .contact-ecosystem h2 { font-size: calc(80 * var(--contact-unit)); }
-.contact-network { position: relative; height: calc(1210 * var(--contact-unit)); margin-top: calc(72 * var(--contact-unit)); }
-.contact-network__business { width: calc(570 * var(--contact-unit)); margin: 0 auto; text-align: center; }
+
 .contact-page .contact-network h3 { font-size: calc(38 * var(--contact-unit)); line-height: 1.2; margin-bottom: calc(14 * var(--contact-unit)); }
 .contact-network p { margin: 0; color: #83817c !important; font-size: max(12px, calc(20 * var(--contact-unit))); line-height: 1.6; }
-.contact-network__diagram { position: absolute; width: calc(900 * var(--contact-unit)); height: calc(900 * var(--contact-unit)); top: calc(218 * var(--contact-unit)); left: 50%; transform: translateX(-50%); }
+
 .contact-network__diagram > svg { display: block; width: 100%; height: 100%; }
 .contact-network__logo { position: absolute; width: 42%; height: auto; left: 29%; top: 42%; }
 .contact-network__node { position: absolute; display: grid; place-items: center; width: 15.5%; height: 15.5%; border: 1px solid #d7b48f; border-radius: 50%; background: #fff; }
@@ -55,7 +54,7 @@
 .contact-network__node--business { top: -5.2%; left: 42.25%; }
 .contact-network__node--landowners { left: 1%; top: 64%; }
 .contact-network__node--developers { right: 1%; top: 64%; }
-.contact-network__landowners, .contact-network__developers { position: absolute; width: 29%; top: calc(975 * var(--contact-unit)); }
+
 .contact-network__landowners { left: 0; text-align: right; }
 .contact-network__developers { right: 0; text-align: left; }
 .contact-founder-section { padding: calc(120 * var(--contact-unit)) 0; background: #fff; }
@@ -121,9 +120,7 @@
   .contact-value { padding: 25px; }
   .contact-value__strapline { min-height: 3em; }
   .contact-values { gap: 20px; }
-  .contact-network { height: 780px; }
-  .contact-network__diagram { top: 185px; }
-  .contact-network__landowners, .contact-network__developers { top: calc(185px + 40vw); width: 27%; }
+
   .contact-founder { grid-template-columns: 1fr 32%; gap: 30px; padding: 36px; }
   .contact-desk__details { gap: 18px; }
   .contact-location__heading { grid-template-columns: 1fr; gap: 14px; }
@@ -155,10 +152,7 @@
   .contact-result > span { margin-top: 16px; font-size: 11px; }
   .contact-result + .contact-result::after { width: 9px; height: 9px; border-width: 1px; }
   .contact-ecosystem { padding: 56px 0 30px; }
-  .contact-network { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 20px; margin-top: 36px; }
-  .contact-network__business { grid-column: 1 / -1; width: min(330px, 100%); }
-  .contact-network__diagram { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: 1; transform: none; grid-column: 1 / -1; }
-  .contact-network__landowners, .contact-network__developers { position: static; width: auto; text-align: center; }
+
   .contact-page .contact-network h3 { font-size: 27px; margin-bottom: 10px; }
   .contact-network p { font-size: 12px; line-height: 1.65; }
   .contact-founder-section { padding: 40px 0 56px; }
@@ -202,3 +196,43 @@
   .contact-clarity p { font-size: 13px; margin: 18px 0 26px; }
 }
 @media (prefers-reduced-motion: reduce) { .contact-page *, .contact-page *::before, .contact-page *::after { animation: none !important; transition: none !important; } }
+
+/* Keep the complete ecosystem in view with labels laid out around a compact diagram. */
+.contact-ecosystem { padding: 32px 0; scroll-margin-top: 90px; }
+.contact-page .contact-ecosystem h2 { font-size: clamp(32px, 3.3vw, 54px); }
+.contact-ecosystem .contact-section-heading p { max-width: 760px; font-size: 13px; margin-top: 10px; }
+.contact-network { display: grid; grid-template-columns: minmax(0, 1fr) min(36svh, 32vw, 360px) minmax(0, 1fr); align-items: center; gap: 24px; width: min(100%, 1040px); margin: 20px auto 0; }
+.contact-network__business { grid-column: 2; grid-row: 1; width: 340px; max-width: 120%; justify-self: center; margin: 0 0 8px; text-align: center; }
+.contact-network__diagram { position: relative; grid-column: 2; grid-row: 2; width: 100%; height: auto; aspect-ratio: 1; }
+.contact-network__landowners { grid-column: 1; grid-row: 2; text-align: right; }
+.contact-network__developers { grid-column: 3; grid-row: 2; text-align: left; }
+.contact-page .contact-network h3 { font-size: clamp(25px, 2vw, 32px); margin-bottom: 8px; }
+.contact-network p { font-size: 13px; line-height: 1.6; }
+.contact-network__node--business { top: -5.4167%; left: 42.25%; }
+.contact-network__node--landowners { left: .9694%; top: 66.0833%; }
+.contact-network__node--developers { right: .9694%; top: 66.0833%; }
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready .contact-value[data-reveal] { transition: opacity .75s ease, transform .75s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
+  .contact-value__image { transition: filter .5s ease; }
+  .contact-value__icon { transition: transform .5s ease, box-shadow .5s ease; }
+  .contact-value:hover { box-shadow: 0 16px 36px #57351912; }
+  .contact-value:hover .contact-value__icon { transform: rotate(-8deg) scale(1.08); box-shadow: 0 0 0 7px #b8733314; }
+  .contact-value:hover .contact-value__image { filter: saturate(1.12); }
+  .contact-value.is-visible .contact-value__image { animation: contact-value-image-in .9s .15s both; }
+  .contact-network.is-visible .contact-network__ring { animation: contact-ring-in 1.2s .15s both; transform-origin: 450px 450px; }
+  .contact-network.is-visible .contact-network__arrow { animation: contact-arrow-flow 2.8s ease-in-out 1.2s 3; }
+  .contact-network.is-visible .contact-network__node { animation: contact-node-in .8s .4s both; }
+  @keyframes contact-value-image-in { from { opacity: .3; clip-path: inset(12% 0 0); } to { opacity: 1; clip-path: inset(0); } }
+  @keyframes contact-ring-in { from { opacity: 0; transform: scale(.88) rotate(-12deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+  @keyframes contact-arrow-flow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes contact-node-in { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: scale(1); } }
+}
+@media (max-width: 700px) {
+  .contact-ecosystem { padding: 28px 0; }
+  .contact-network { grid-template-columns: 1fr 1fr; gap: 18px 16px; margin-top: 20px; }
+  .contact-network__business { grid-column: 1 / -1; grid-row: 1; width: min(330px, 100%); max-width: 100%; }
+  .contact-network__diagram { grid-column: 1 / -1; grid-row: 2; width: min(210px, 58vw); justify-self: center; }
+  .contact-network__landowners { grid-column: 1; grid-row: 3; text-align: center; }
+  .contact-network__developers { grid-column: 2; grid-row: 3; text-align: center; }
+  .contact-network p { font-size: 12px; line-height: 1.5; }
+}

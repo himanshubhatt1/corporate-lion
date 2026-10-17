@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
+import { ServicesContactButton } from "../../components/ServicesContactButton";
 import { ResidentialFeatureIcon } from "../../components/ResidentialFeatureIcon";
 import { residences } from "../../data/residential";
 import { asset } from "../../lib/assets";
@@ -20,7 +21,7 @@ export default function LuxuryResidentialPage() {
         <span className="residential-eyebrow">Luxury Residential</span>
         <h1 id="residential-title">Homes that match<br />the life you’ve built.</h1>
         <p>A home should reflect more than where you live; it should reflect how you choose to live. We bring together exceptional apartments, penthouses, villas, weekend retreats, and residential plots, each offering a distinct opportunity to create a lifestyle defined by comfort, privacy, space, and individuality.</p>
-        <a className="residential-button" href="#residences">Our Services <span aria-hidden="true">→</span></a>
+        <ServicesContactButton className="residential-button" />
       </div>
     </section>
 
@@ -47,6 +48,14 @@ export default function LuxuryResidentialPage() {
             <div className="residential-card__visual"><img src={asset(residence.image)} alt={residence.alt} width={484} height={640} loading="lazy" /></div>
           </article>)}
         </div>
+      </div>
+    </section>
+    <section className="residential-contact" aria-labelledby="residential-contact-title">
+      <div className="residential-container">
+        <span className="residential-eyebrow">Private Advisory</span>
+        <h2 id="residential-contact-title">Let&apos;s find your <span>next home.</span></h2>
+        <p>Share your preferences with our team and explore residences suited to your lifestyle.</p>
+        <ServicesContactButton className="residential-button" label="Start a Conversation" />
       </div>
     </section>
     <SiteFooter />

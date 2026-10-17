@@ -3,11 +3,18 @@
 import { useState } from "react";
 import { interestOptions } from "../data/site";
 
-export function ContactForm() {
-  const [interest, setInterest] = useState(interestOptions[0]);
+export function ContactForm({ reveal = true }: { reveal?: boolean }) {
+  const [phone, setPhone] = useState("");
+  const [interests, setInterests] = useState<string[]>([interestOptions[0]]);
+
+  function toggleInterest(option: string) {
+    setInterests((selected) => selected.includes(option)
+      ? selected.filter((interest) => interest !== option)
+      : [...selected, option]);
+  }
 
   return (
-    <form className="inquiry-form" data-reveal="right">
+    <form className="inquiry-form" data-reveal={reveal ? "right" : undefined}>
       <h3>Start a Conversation</h3>
       <div className="form-grid">
         <label>
@@ -24,7 +31,17 @@ export function ContactForm() {
         </label>
         <label>
           Phone Number *
-          <input name="phone" type="tel" autoComplete="tel" placeholder="+91 98000 00000" />
+          <input
+            name="phone"
+            type="tel"
+            inputMode="numeric"
+            pattern="[0-9]+"
+            autoComplete="tel"
+            placeholder="919800000000"
+            required
+            value={phone}
+            onChange={(event) => setPhone(event.currentTarget.value.replace(/[^0-9]/g, ""))}
+          />
         </label>
       </div>
 
@@ -34,16 +51,18 @@ export function ContactForm() {
           {interestOptions.map((option) => (
             <button
               type="button"
-              className={option === interest ? "is-active" : undefined}
-              aria-pressed={option === interest}
-              onClick={() => setInterest(option)}
+              className={interests.includes(option) ? "is-active" : undefined}
+              aria-pressed={interests.includes(option)}
+              onClick={() => toggleInterest(option)}
               key={option}
             >
               {option}
             </button>
           ))}
         </div>
-        <input type="hidden" name="interest" value={interest} />
+        {interests.map((interest) => (
+          <input type="hidden" name="interest" value={interest} key={interest} />
+        ))}
       </fieldset>
 
       <label>

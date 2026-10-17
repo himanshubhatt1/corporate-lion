@@ -50,7 +50,7 @@ export function CoworkingContent() {
 
     <section className="coworking-listing" id="list-your-property" aria-labelledby="coworking-listing-title">
       <div className="coworking-container">
-        <span className="coworking-eyebrow">List Your Property</span>
+        <span className="coworking-eyebrow">List your Coworking space</span>
         <h2 id="coworking-listing-title">Your property deserves more than a listing.<br /><span>It deserves the Right Advisory.</span></h2>
         <p>Share your property details, location, availability, and leasing preferences. Our<br className="coworking-desktop-break" /> team will connect you with suitable businesses looking for the right space.</p>
         <button type="button" className="coworking-button" onClick={() => setInquiry({ mode: "listing" })}>Submit Property Details <span aria-hidden="true">→</span></button>

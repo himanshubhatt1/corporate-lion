@@ -3,14 +3,14 @@
 /* Heroes host the masthead, so they must stack above later sections once it turns fixed. */
 :is(.hero, .services-hero, .leasing-hero, .coworking-hero, .contact-hero, .insights-hero, .careers-hero, .projects-hero) { z-index: 30; }
 
-.masthead-slot { position: relative; z-index: 30; height: clamp(68px, 6.43vw, 124px); --masthead-ink: #fff; --masthead-active: #fff; }
+.masthead-slot { position: relative; z-index: 30; height: clamp(68px, 5.13vw, 124px); --masthead-ink: #fff; --masthead-active: #fff; }
 .masthead-slot--light { --masthead-ink: #fff; --masthead-active: #fff; }
-.masthead { position: absolute; inset: 0 0 auto; height: 100%; background: rgba(0, 0, 0, 0.69);
+.masthead { position: absolute; inset: 0 0 auto; height: 100%; background: #0000008a;
 ; animation: mastheadIn 900ms cubic-bezier(.22, 1, .36, 1) 120ms both; }
 .masthead__inner { display: flex; align-items: center; gap: clamp(24px, 2.8vw, 54px); width: min(75vw, 1440px); height: 100%; margin: 0 auto; }
 .masthead__brand { position: relative; display: inline-flex; flex-shrink: 0; }
 .masthead__brand::after { position: absolute; inset: 0; content: ''; pointer-events: none; background: url('/images/newlogo-e1769688001953-Photoroom%201.svg') center / contain no-repeat; filter: brightness(0) invert(1); clip-path: inset(72% 0 0 17%); }
-.masthead__brand img { width: clamp(96px, 9.1vw, 175px); height: auto; transition: width 400ms cubic-bezier(.22, 1, .36, 1); }
+.masthead__brand img { width: clamp(96px, 7.5vw, 175px); height: auto; transition: width 400ms cubic-bezier(.22, 1, .36, 1); }
 .masthead__nav { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: clamp(16px, 2.8vw, 54px); }
 .masthead__link { position: relative; padding: 6px 0; color: var(--masthead-ink); font-size: clamp(9px, .84vw, 16px); font-weight: 500; letter-spacing: .18em; text-transform: uppercase; white-space: nowrap; transition: color 250ms ease; }
 .masthead__link::after { position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; content: ""; background: #b87333; transform: scaleX(0); transform-origin: right center; transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
@@ -22,7 +22,7 @@
 .masthead__cta span { display: inline-block; transition: transform 300ms cubic-bezier(.22, 1, .36, 1); }
 .masthead__cta:hover span { transform: translateX(4px); }
 .masthead__toggle { display: none; }
-.masthead.is-fixed { position: fixed; top: 0; left: 0; right: 0; height: clamp(64px, 5vw, 96px); background: rgba(8, 8, 7, .94); box-shadow: 0 10px 30px rgba(0, 0, 0, .1); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); --masthead-ink: #fff; --masthead-active: #fff; animation: mastheadDrop 550ms cubic-bezier(.22, 1, .36, 1) both; }
+.masthead.is-fixed { position: fixed; top: 0; left: 0; right: 0; height: clamp(64px, 5vw, 96px); background: #000000cf; box-shadow: 0 10px 30px rgba(0, 0, 0, .1); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); --masthead-ink: #fff; --masthead-active: #fff; animation: mastheadDrop 550ms cubic-bezier(.22, 1, .36, 1) both; }
 .masthead.is-fixed .masthead__brand img { width: clamp(96px, 7.3vw, 140px); }
 @keyframes mastheadIn { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
 @keyframes mastheadDrop { from { transform: translateY(-100%); } to { transform: none; } }
@@ -120,4 +120,52 @@
   .site-footer .subscribe input { min-height: 48px; padding: 0 16px; font-size: 13px; }
   .site-footer .subscribe button { min-height: 44px; font-size: 11px; }
   .site-footer .site-whatsapp { top: 52px; right: 20px; width: 44px; height: 44px; }
+}
+
+/* Shared services navigation: hover on desktop, disclosure on touch and keyboard. */
+.masthead__services { position: relative; }
+.masthead__services-heading { display: flex; align-items: center; gap: 3px; }
+.masthead__submenu-toggle { display: grid; place-items: center; flex-shrink: 0; width: 26px; height: 36px; padding: 4px; border: 0; background: transparent; color: var(--masthead-ink); cursor: pointer; }
+.masthead__submenu-toggle svg { width: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; transition: transform .2s ease; }
+.masthead__submenu-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.masthead__submenu { position: absolute; top: 100%; left: -16px; z-index: 40; min-width: 235px; padding: 10px; background: #1c1a17; border: 1px solid #b8733355; box-shadow: 0 16px 32px #0004; }
+.masthead__submenu a { display: block; padding: 14px 12px; color: #f5eee4; font-size: 15px; letter-spacing: .06em; transition: background .2s ease, color .2s ease; }
+.masthead__submenu a:is(:hover, :focus-visible, [aria-current="page"]) { color: #edbb86; background: #ffffff0a; }
+.masthead__submenu-toggle:focus-visible, .masthead__submenu a:focus-visible { outline: 2px solid #d59859; outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .masthead__submenu:not([hidden]) { animation: servicesSubmenuIn .18s ease-out; }
+  @keyframes servicesSubmenuIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (max-width: 900px) {
+  .masthead__nav { max-height: calc(100dvh - 90px); overflow-y: auto; }
+  .masthead__services-heading .masthead__link { flex: 1; }
+  .masthead__submenu-toggle { width: 44px; height: 44px; }
+  .masthead__submenu { position: static; min-width: 0; margin: 0 0 10px; padding: 4px 0 4px 14px; border: 0; border-left: 1px solid #b87333; background: transparent; box-shadow: none; }
+  .masthead__submenu a { min-height: 44px; }
+}
+
+/* Native modal reuses the home-page contact form. */
+.services-contact-dialog { width: min(760px, calc(100% - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow: hidden; border: 1px solid #b8733370; background: #24221e; color: #fff; box-shadow: 0 24px 80px #0007; }
+.services-contact-dialog[open] { display: flex; flex-direction: column; }
+.services-contact-dialog::backdrop { background: #000a; backdrop-filter: blur(5px); }
+.services-contact-dialog__header { display: flex; flex-shrink: 0; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 24px; background: #1c1a17; color: #dec5a3; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.services-contact-dialog__header button { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; margin: 0; padding: 0; border: 1px solid #d7b69066; background: transparent; color: #fff; line-height: 1; cursor: pointer; }
+.services-contact-dialog__header button svg { display: block; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.services-contact-dialog .services-contact-dialog__body { min-height: 0; padding: 0; overflow-y: auto; overscroll-behavior-y: contain; background: transparent; scrollbar-width: thin; scrollbar-color: #8e7151 #24221e; }
+.services-contact-dialog__body::-webkit-scrollbar { width: 6px; }
+.services-contact-dialog__body::-webkit-scrollbar-track { background: #24221e; }
+.services-contact-dialog__body::-webkit-scrollbar-thumb { background: #8e7151; border-radius: 6px; }
+.services-contact-dialog .advisory-contact .inquiry-form { padding: 24px 30px; gap: 0; background: #24221e; border: 0; box-shadow: none; }
+.services-contact-dialog .advisory-contact .inquiry-form h3 { margin: 0 0 20px; font-size: 32px; }
+.services-contact-dialog .advisory-contact .form-grid { gap: 18px 24px; }
+.services-contact-dialog .advisory-contact .interest-chips { margin: 22px 0; }
+.services-contact-dialog .advisory-contact .interest-chips legend { margin-bottom: 12px; }
+.services-contact-dialog .advisory-contact .inquiry-form textarea { min-height: 72px; }
+.services-contact-dialog .advisory-contact .inquiry-form .button { margin-top: 20px; }
+.services-contact-dialog .advisory-contact .inquiry-form__note { margin-top: 12px; }
+.services-contact-dialog :is(button, input, textarea):focus-visible { outline: 2px solid #d59859; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .services-contact-dialog__header { padding: 12px 18px; font-size: 10px; gap: 12px; }
+  .services-contact-dialog .advisory-contact .inquiry-form { padding: 22px 20px; }
+  .services-contact-dialog .advisory-contact .inquiry-form .button { font-size: 10px; letter-spacing: .1em; padding-inline: 12px; }
 }
