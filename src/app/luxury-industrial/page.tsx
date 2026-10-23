@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServicesContactButton } from "../../components/ServicesContactButton";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
 import { ResidentialFeatureIcon } from "../../components/ResidentialFeatureIcon";
@@ -21,6 +22,7 @@ export default function LuxuryIndustrialPage() {
         <span className="residential-eyebrow">Industrial</span>
         <h1 id="industrial-title">Find a facility that keeps<br />your business moving</h1>
         <p>Whether you need land to build, space to manufacture, or infrastructure to move goods, we connect your requirement with the right industrial opportunity.</p>
+        <ServicesContactButton className="residential-button" label="Discuss Your Requirements" />
       </div>
     </section>
     <section className="residential-collection" id="industrial-services" aria-labelledby="industrial-collection-title">

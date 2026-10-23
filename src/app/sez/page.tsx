@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServicesContactButton } from "../../components/ServicesContactButton";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
 import { sezBenefits, sezLocations } from "../../data/sez";
@@ -25,10 +26,10 @@ export default function SezPage() {
       <img className="residential-hero__image" src={asset("sez/hero.webp")} alt="" fetchPriority="high" />
       <SiteHeader />
       <div className="residential-container residential-hero__content">
-        <span className="residential-eyebrow">Luxury Residential</span>
+        <span className="residential-eyebrow">Special Economic Zones</span>
         <h1 id="sez-title">Homes that match<br />the life you’ve built.</h1>
         <p>A home should reflect more than where you live; it should reflect how you choose to live. We bring together exceptional apartments, penthouses, villas, weekend retreats, and residential plots, each offering a distinct opportunity to create a lifestyle defined by comfort, privacy, space, and individuality.</p>
-        <a className="residential-button" href="#sez-locations">Explore Workspaces <span aria-hidden="true">→</span></a>
+        <ServicesContactButton className="residential-button" label="Explore Workspaces" />
       </div>
     </section>
 

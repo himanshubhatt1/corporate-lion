@@ -8,7 +8,7 @@ import { asset } from "../../lib/assets";
 import "../residential.css";
 
 export const metadata: Metadata = {
-  title: "Luxury Residential | Corporate Lion",
+  title: "Residential | Corporate Lion",
   description: "Discover curated high-rise apartments, luxury penthouses, weekend homes, villas and residential plots with Corporate Lion.",
 };
 
@@ -18,7 +18,7 @@ export default function LuxuryResidentialPage() {
       <img className="residential-hero__image" src={asset("residential/hero.webp")} alt="" fetchPriority="high" />
       <SiteHeader />
       <div className="residential-container residential-hero__content">
-        <span className="residential-eyebrow">Luxury Residential</span>
+        <span className="residential-eyebrow">Residential</span>
         <h1 id="residential-title">Homes that match<br />the life you’ve built.</h1>
         <p>A home should reflect more than where you live; it should reflect how you choose to live. We bring together exceptional apartments, penthouses, villas, weekend retreats, and residential plots, each offering a distinct opportunity to create a lifestyle defined by comfort, privacy, space, and individuality.</p>
         <ServicesContactButton className="residential-button" />

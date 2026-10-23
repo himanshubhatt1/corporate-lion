@@ -7,11 +7,11 @@
 .masthead-slot--light { --masthead-ink: #fff; --masthead-active: #fff; }
 .masthead { position: absolute; inset: 0 0 auto; height: 100%; background: #0000008a;
 ; animation: mastheadIn 900ms cubic-bezier(.22, 1, .36, 1) 120ms both; }
-.masthead__inner { display: flex; align-items: center; gap: clamp(24px, 2.8vw, 54px); width: min(75vw, 1440px); height: 100%; margin: 0 auto; }
+.masthead__inner { display: flex; align-items: center; gap: clamp(20px, 2.5vw, 48px); width: min(75vw, 1400px); height: 100%; margin: 0 auto; }
 .masthead__brand { position: relative; display: inline-flex; flex-shrink: 0; }
 .masthead__brand::after { position: absolute; inset: 0; content: ''; pointer-events: none; background: url('/images/newlogo-e1769688001953-Photoroom%201.svg') center / contain no-repeat; filter: brightness(0) invert(1); clip-path: inset(72% 0 0 17%); }
-.masthead__brand img { width: clamp(96px, 7.5vw, 175px); height: auto; transition: width 400ms cubic-bezier(.22, 1, .36, 1); }
-.masthead__nav { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: clamp(16px, 2.8vw, 54px); }
+.masthead__brand img { width: clamp(140px, 8vw, 200px); height: auto; transition: width 400ms cubic-bezier(.22, 1, .36, 1); }
+.masthead__nav { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: clamp(12px, 1.6vw, 30px); }
 .masthead__link { position: relative; padding: 6px 0; color: var(--masthead-ink); font-size: clamp(9px, .84vw, 16px); font-weight: 500; letter-spacing: .18em; text-transform: uppercase; white-space: nowrap; transition: color 250ms ease; }
 .masthead__link::after { position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; content: ""; background: #b87333; transform: scaleX(0); transform-origin: right center; transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
 .masthead__link:hover::after,
@@ -23,14 +23,14 @@
 .masthead__cta:hover span { transform: translateX(4px); }
 .masthead__toggle { display: none; }
 .masthead.is-fixed { position: fixed; top: 0; left: 0; right: 0; height: clamp(64px, 5vw, 96px); background: #000000cf; box-shadow: 0 10px 30px rgba(0, 0, 0, .1); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); --masthead-ink: #fff; --masthead-active: #fff; animation: mastheadDrop 550ms cubic-bezier(.22, 1, .36, 1) both; }
-.masthead.is-fixed .masthead__brand img { width: clamp(96px, 7.3vw, 140px); }
+.masthead.is-fixed .masthead__brand img { width: clamp(150px, 10vw, 195px); }
 @keyframes mastheadIn { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
 @keyframes mastheadDrop { from { transform: translateY(-100%); } to { transform: none; } }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .masthead__inner { width: calc(100% - 40px); gap: 16px; }
   .masthead__brand img,
-  .masthead.is-fixed .masthead__brand img { width: 118px; }
+  .masthead.is-fixed .masthead__brand img { width: 150px; }
   .masthead__toggle { display: grid; align-content: center; justify-items: center; gap: 5px; width: 44px; height: 44px; margin-left: auto; padding: 0; border: 0; background: transparent; cursor: pointer; }
   .masthead__toggle span { display: block; width: 24px; height: 2px; background: var(--masthead-ink); transition: transform 350ms cubic-bezier(.22, 1, .36, 1), opacity 250ms ease; }
   .masthead.is-open .masthead__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -74,7 +74,7 @@
 }
 .site-footer .footer__about { padding-top: calc(18 * var(--footer-unit)); }
 .site-footer .footer__brand { position: relative; display: block; width: fit-content; margin: 0 0 calc(30 * var(--footer-unit)); }
-.site-footer .footer__brand img { display: block; width: calc(260 * var(--footer-unit)); height: auto; margin: 0; }
+.site-footer .footer__brand img { display: block; width: clamp(200px, 18vw, 310px); height: auto; margin: 0; }
 .site-footer .footer__brand::after { position: absolute; inset: 0; content: ''; pointer-events: none; background: url('/images/newlogo-e1769688001953-Photoroom%201.svg') center / contain no-repeat; filter: brightness(0) invert(1); clip-path: inset(72% 0 0 17%); }
 .site-footer h3 { max-width: calc(310 * var(--footer-unit)); margin: 0 0 calc(24 * var(--footer-unit)); color: #c2ad8f !important; font-family: 'Cormorant Garamond', Georgia, serif; font-size: calc(24 * var(--footer-unit)); font-weight: 400; line-height: 1.5; letter-spacing: .15em; text-transform: uppercase; }
 .site-footer p { margin: 0; color: #a69e92 !important; font-size: calc(16 * var(--footer-unit)); font-weight: 400; line-height: 1.6; }
@@ -107,7 +107,7 @@
   .site-footer .container.footer__grid { width: calc(100% - 40px); grid-template-columns: 1fr; gap: 36px; }
   .site-footer .footer__about { padding-top: 0; }
   .site-footer .footer__brand { margin-bottom: 24px; }
-  .site-footer .footer__brand img { width: 175px; }
+  .site-footer .footer__brand img { width: 210px; }
   .site-footer .footer__about p { white-space: normal; font-size: 11px; }
   .site-footer h3 { max-width: none; margin-bottom: 16px; font-size: 20px; }
   .site-footer .footer__newsletter h3 { margin-bottom: 10px; }
@@ -136,7 +136,7 @@
   .masthead__submenu:not([hidden]) { animation: servicesSubmenuIn .18s ease-out; }
   @keyframes servicesSubmenuIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .masthead__nav { max-height: calc(100dvh - 90px); overflow-y: auto; }
   .masthead__services-heading .masthead__link { flex: 1; }
   .masthead__submenu-toggle { width: 44px; height: 44px; }
@@ -168,4 +168,34 @@
   .services-contact-dialog__header { padding: 12px 18px; font-size: 10px; gap: 12px; }
   .services-contact-dialog .advisory-contact .inquiry-form { padding: 22px 20px; }
   .services-contact-dialog .advisory-contact .inquiry-form .button { font-size: 10px; letter-spacing: .1em; padding-inline: 12px; }
+}
+/* Larger brand marks and recognisable social colours. */
+.masthead__brand, .site-footer .footer__brand { transition: transform .35s ease, filter .35s ease; }
+.masthead__brand:is(:hover, :focus-visible), .site-footer .footer__brand:is(:hover, :focus-visible) { transform: scale(1.045); filter: drop-shadow(0 3px 10px #d8953038); }
+.site-footer .footer__socials { gap: 10px; }
+.site-footer .footer__socials > :is(span, a) { flex: 0 0 44px; width: 44px; height: 44px; border: 0; border-radius: 4px; font-size: 24px; transition: transform .25s ease, filter .25s ease; }
+.site-footer .footer__socials > [aria-label="LinkedIn"] { background: #0a66c2; }
+.site-footer .footer__socials > [aria-label="WhatsApp"] { background: #25d366; }
+.site-footer .footer__socials > [aria-label="Instagram"] { background: radial-gradient(circle at 25% 110%, #feda75, #fa7e1e 30%, #d62976 55%, #962fbf 80%, #4f5bd5); }
+.site-footer .footer__socials > [aria-label="YouTube"] { background: #ff0000; }
+.site-footer .footer__socials > [aria-label="Facebook"] { background: #1877f2; }
+.site-footer .footer__socials > :is(span, a):hover { transform: translateY(-3px); filter: brightness(1.12); }
+.site-footer .footer__socials svg { width: 26px; height: 26px; }
+.site-footer .footer__socials [aria-label="YouTube"] path { fill: currentColor; stroke: none; }
+.blog-contact-cta { padding: clamp(40px, 5vw, 90px) 24px; text-align: center; background: #fbf5ed; }
+.blog-contact-cta h2 { margin: 14px 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(34px, 3.6vw, 64px); font-weight: 400; line-height: 1.1; }
+.blog-contact-cta h2 em { color: #b87333; font-style: normal; }
+.blog-contact-cta p { margin: 0 0 24px; color: #77716b; }
+.video-card__play:focus-visible, .featured-video__play:focus-visible { outline: 3px solid #edbb86; outline-offset: 5px; }
+@media (prefers-reduced-motion: no-preference) {
+  .masthead__brand { animation: brandArrival .8s .35s both cubic-bezier(.22, 1, .36, 1); }
+  @keyframes brandArrival { from { opacity: 0; transform: translateX(-16px) scale(.94); } to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .masthead, .masthead.is-fixed { animation: none; }
+  .masthead__brand, .site-footer .footer__brand, .site-footer .footer__socials > :is(span, a) { transition: none; }
+  .masthead__brand:is(:hover, :focus-visible), .site-footer .footer__brand:is(:hover, :focus-visible), .site-footer .footer__socials > :is(span, a):hover { transform: none; }
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  .site-footer .container.footer__grid { width: calc(100% - 64px); gap: 28px; }
 }

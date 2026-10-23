@@ -417,8 +417,8 @@ body :is(h1, h2, h3, h4, h5, h6) em { color: #B87333 !important; }
 .home-page .stories .video-card { min-height: 0; aspect-ratio: 223 / 215; isolation: isolate; }
 .home-page .stories .video-card > img { width: 100%; height: 100%; opacity: 1; object-fit: cover; }
 .home-page .stories .video-card::after { position: absolute; inset: 0; z-index: 1; content: ''; pointer-events: none; background: linear-gradient(to bottom, transparent 20%, #14141215 45%, #141412dd 100%); }
-.home-page .stories .video-card button { z-index: 3; width: clamp(38px, 3.7vw, 71px); height: clamp(38px, 3.7vw, 71px); background: #B87333; }
-.home-page .stories .video-card button span { border-top-width: 7px; border-bottom-width: 7px; border-left-width: 11px; }
+.home-page .stories .video-card .video-card__play { z-index: 3; width: clamp(38px, 3.7vw, 71px); height: clamp(38px, 3.7vw, 71px); background: #B87333; }
+.home-page .stories .video-card .video-card__play span { border-top-width: 7px; border-bottom-width: 7px; border-left-width: 11px; }
 .home-page .stories .video-card__caption { position: absolute; z-index: 2; left: 7%; right: 7%; bottom: 8%; }
 .home-page .stories .video-card__caption > span { display: block; margin-bottom: 2px; color: #d0b792; font-size: clamp(9px, .73vw, 14px); letter-spacing: .08em; text-transform: uppercase; font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif; }
 .home-page .stories .video-card h3 { position: static; margin: 0; color: #fffaf2 !important; font-size: clamp(12px, 1.08vw, 21px); font-weight: 400; line-height: 1.12; text-shadow: none; }
@@ -430,7 +430,7 @@ body :is(h1, h2, h3, h4, h5, h6) em { color: #B87333 !important; }
   .home-page .stories .video-card { aspect-ratio: 4 / 3; }
   .home-page .stories .video-card h3 { font-size: 20px; }
   .home-page .stories .video-card__caption > span { font-size: 11px; }
-  .home-page .stories .video-card button { width: 48px; height: 48px; }
+  .home-page .stories .video-card .video-card__play { width: 48px; height: 48px; }
   .home-page .stories::before { width: 70%; }
 }
 
@@ -454,7 +454,7 @@ body :is(h1, h2, h3, h4, h5, h6) em { color: #B87333 !important; }
 .home-page .metric:hover img { transform: translateY(-6px) scale(1.08); }
 @media (prefers-reduced-motion: no-preference) {
   .home-page .ecosystem-diagram__arrow { transform-box: fill-box; transform-origin: center; animation: arrowBeat 2.6s ease-in-out infinite; }
-  .home-page .stories .video-card button::before { position: absolute; inset: 0; content: ''; border: 2px solid rgba(255, 255, 255, .7); border-radius: 50%; animation: ringPulse 2.4s ease-out infinite; }
+  .home-page .stories .video-card .video-card__play::before { position: absolute; inset: 0; content: ''; border: 2px solid rgba(255, 255, 255, .7); border-radius: 50%; animation: ringPulse 2.4s ease-out infinite; }
   .home-page .services::before, .home-page .services::after,
   .home-page .testimonials::before, .home-page .stories::before { animation: dotDrift 16s ease-in-out infinite alternate; }
 }

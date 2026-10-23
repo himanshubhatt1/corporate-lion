@@ -56,10 +56,10 @@
 .home-page .stories .video-card > img { height: 77%; }
 .home-page .stories .video-card::after { background: linear-gradient(to bottom, transparent 55%, #0000 60%, #000 80%); }
 /* Play artwork is already present in the reference's portrait image crops. */
-.home-page .stories .video-card button { top: 40.5%; width: 30%; height: auto; aspect-ratio: 1; background: transparent; }
-.home-page .stories .video-card button span { visibility: hidden; }
-.home-page .stories .video-card button::before { display: none; }
-.home-page .stories .video-card button:hover { background: #ffffff18; box-shadow: 0 0 0 3px #ffffff70; }
+.home-page .stories .video-card .video-card__play { top: 40.5%; width: 30%; height: auto; aspect-ratio: 1; background: transparent; }
+.home-page .stories .video-card .video-card__play span { visibility: hidden; }
+.home-page .stories .video-card .video-card__play::before { display: none; }
+.home-page .stories .video-card .video-card__play:hover { background: #ffffff18; box-shadow: 0 0 0 3px #ffffff70; }
 .home-page .stories .video-card__caption { left: 9%; right: 7%; bottom: 7.5%; }
 .home-page .stories .video-card__caption > span { margin-bottom: min(.42vw, 8px); font-size: min(.52vw, 10px); font-weight: 600; letter-spacing: .12em; }
 .home-page .stories .video-card h3 { font-size: min(1.56vw, 30px); line-height: 1; }
@@ -70,7 +70,7 @@
 .home-page .testimonials .section-title p { font-size: min(.94vw, 18px); }
 .home-page .review-slider__controls { gap: min(1.04vw, 20px); margin-bottom: min(2.5vw, 48px); }
 .home-page .review-slider__controls button { width: min(3.75vw, 72px); height: min(3.75vw, 72px); }
-.home-page .review-slider__viewport { padding-top: min(2.60vw, 50px); }
+.home-page .review-slider__viewport { padding-top: min(2.47vw, 50px); }
 .home-page .testimonials .testimonial { min-height: min(16.67vw, 320px); padding: min(3.75vw, 72px) min(2.08vw, 40px) min(2.6vw, 50px); }
 .home-page .testimonials .testimonial > span { width: min(3.33vw, 64px); height: min(3.33vw, 64px); font-size: min(1.04vw, 20px); }
 .home-page .testimonials .testimonial h3 { font-size: min(1.04vw, 20px); }

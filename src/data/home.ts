@@ -7,7 +7,7 @@ export const serviceCards = [
     href: "/luxury-commercial"
   },
   {
-    title: "Luxury Residential",
+    title: "Residential",
     text: "Premium residential properties in prime locations, offering sophisticated living, modern amenities, and exceptional lifestyle value.",
     image: "home/luxury-residential.webp",
     alt: "Illuminated luxury residence with landscaped gardens",

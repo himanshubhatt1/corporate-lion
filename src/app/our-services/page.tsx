@@ -10,7 +10,7 @@ import { asset } from "../../lib/assets";
 
 export const metadata: Metadata = {
   title: "Our Services | Corporate Lion",
-  description: "Explore Corporate Lion’s luxury residential, commercial, industrial and SEZ real estate advisory services."
+  description: "Explore Corporate Lion’s residential, commercial, industrial and SEZ real estate advisory services."
 };
 
 export default function OurServicesPage() {

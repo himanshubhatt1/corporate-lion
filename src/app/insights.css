@@ -55,8 +55,8 @@
 .insights-page .featured-video { min-height: 0; aspect-ratio: 424 / 656; box-shadow: none; }
 .insights-page .featured-video > img { height: 100%; opacity: 1; }
 .insights-page .featured-video::after { inset: 0; background: linear-gradient(to bottom, transparent 30%, #0002 45%, #000 85%); }
-.insights-page .featured-video button { top: 32%; width: calc(120 * var(--insights-unit)); height: calc(120 * var(--insights-unit)); border: 1px solid #ffffffa0; }
-.insights-page .featured-video button span { border-top-width: calc(25 * var(--insights-unit)); border-bottom-width: calc(25 * var(--insights-unit)); border-left-width: calc(36 * var(--insights-unit)); }
+.insights-page .featured-video .featured-video__play { top: 32%; width: calc(120 * var(--insights-unit)); height: calc(120 * var(--insights-unit)); border: 1px solid #ffffffa0; }
+.insights-page .featured-video .featured-video__play span { border-top-width: calc(25 * var(--insights-unit)); border-bottom-width: calc(25 * var(--insights-unit)); border-left-width: calc(36 * var(--insights-unit)); }
 .insights-page .featured-video > div { left: 9%; right: 8%; bottom: 7%; }
 .insights-page .featured-video div > span { color: #b39a79; font-size: calc(10 * var(--insights-unit)); font-weight: 500; letter-spacing: .13em; }
 .insights-page .featured-video h3 { max-width: 10em; margin: calc(10 * var(--insights-unit)) 0 calc(18 * var(--insights-unit)); color: #f1e7d7 !important; font-size: calc(32 * var(--insights-unit)); line-height: 1; }
@@ -112,7 +112,7 @@
   .insights-page .featured-video-grid { grid-template-columns: 1fr; max-width: 370px; gap: 24px; }
   .insights-page .featured-video { height: auto; }
   .insights-page .featured-video > img { min-height: 0; }
-  .insights-page .featured-video button { width: 72px; height: 72px; }
+  .insights-page .featured-video .featured-video__play { width: 72px; height: 72px; }
   .insights-page .featured-video h3 { font-size: 30px; }
   .insights-page .featured-video div > span { font-size: 9px; }
   .insights-page .featured-video p { font-size: 12px; }

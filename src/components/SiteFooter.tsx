@@ -32,7 +32,7 @@ export function SiteFooter() {
           <h3>Stay Ahead of the Market</h3>
           <p>Subscribe to our quarterly intelligence briefing on commercial absorption rates and valuation shifts.</p>
           <div className="subscribe">
-            <input type="email" aria-label="Corporate email for market updates" placeholder="Enter corporate email" />
+            <input type="email" aria-label="Email for market updates" placeholder="Enter email" />
             <button type="button">Subscribe</button>
           </div>
         </div>

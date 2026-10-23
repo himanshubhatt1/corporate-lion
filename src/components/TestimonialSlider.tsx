@@ -63,7 +63,7 @@ export function TestimonialSlider() {
   }, [autoPlaying, move]);
 
   return (
-    <div className="review-slider" role="region" aria-roledescription="carousel" aria-label="Client reviews"
+    <div className="review-slider" data-reveal="up" role="region" aria-roledescription="carousel" aria-label="Client reviews"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)}

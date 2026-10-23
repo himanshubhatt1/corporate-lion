@@ -67,6 +67,13 @@ export default function InsightsPage() {
           </div>
         </section>
 
+        <section className="blog-contact-cta" aria-labelledby="blog-cta-title">
+          <span className="insights-eyebrow">From Insight to Opportunity</span>
+          <h2 id="blog-cta-title">Make your next move <em>with clarity.</em></h2>
+          <p>Discuss your property goals with our advisory team.</p>
+          <a className="button button--secondary" href="/contact">Talk to an Advisor <span aria-hidden="true">&rarr;</span></a>
+        </section>
+
         <section className="property-guides" id="guides">
           <div className="insights-container">
             <div className="video-heading" id="videos" data-reveal="up">
@@ -83,9 +90,9 @@ export default function InsightsPage() {
                   key={video.title}
                 >
                   <img src={asset(video.image)} alt="" loading="lazy" />
-                  <button type="button" aria-label={`Play ${video.title}`}>
+                  <a className="featured-video__play" href="/videos" aria-label={`Explore videos: ${video.title}`}>
                     <span />
-                  </button>
+                  </a>
                   <div>
                     <span>{video.tag}</span>
                     <h3>{video.titleLines[0]}<br />{video.titleLines[1]}</h3>

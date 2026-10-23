@@ -21,7 +21,7 @@ export const trendCards = [
   {
     id: "luxury-living",
     href: "#guides",
-    tag: "Luxury Residential",
+    tag: "Residential",
     title: "Privacy, space, and service reshape premium housing",
     text: "The ownership preferences influencing apartments, villas, and second homes.",
     image: "div.news-image (2).svg",

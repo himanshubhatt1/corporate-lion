@@ -2,17 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import { projectCategories, projects, type ProjectCategory } from "../data/projects";
+import { servicePartners } from "../data/services";
 import { asset } from "../lib/assets";
 import { ProjectInquiryDialog } from "./ProjectInquiryDialog";
 
 export function ProjectCollection() {
-  const [category, setCategory] = useState<ProjectCategory>("Luxury Residential");
+  const [category, setCategory] = useState<ProjectCategory>("All");
   const [inquiry, setInquiry] = useState<{ projectName: string } | null>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const filtered = projects.filter((project) => category === "All" || project.category === category);
 
   useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get("category");
+    const value = new URLSearchParams(window.location.search).get("category");
+    const requested = value === "Luxury Residential" ? "Residential" : value === "Luxury Commercial" ? "Commercial" : value;
     if (projectCategories.some(item => item === requested)) setCategory(requested as ProjectCategory);
   }, []);
 
@@ -53,6 +55,20 @@ export function ProjectCollection() {
               </article>)}
             </div>
           </div>
+        </div>
+      </section>
+      <section className="project-developers projects-container" aria-labelledby="project-developers-title">
+        <div className="project-inventory__heading" data-reveal="up">
+          <span className="projects-eyebrow">Explore by Developer</span>
+          <h2 id="project-developers-title">Our <span>Developers</span></h2>
+          <p>Speak with our team about opportunities from leading developers.</p>
+        </div>
+        <div className="project-developers__grid">
+          {servicePartners.slice(0, 3).map(developer => <article className="project-developer" key={developer.name}>
+            <div className="project-developer__logo"><img src={asset(developer.image)} alt={developer.name} loading="lazy" /></div>
+            <h3>{developer.name}</h3>
+            <button type="button" className="projects-button" onClick={() => setInquiry({ projectName: developer.name })}>Enquire about Projects <span aria-hidden="true">&rarr;</span></button>
+          </article>)}
         </div>
       </section>
       <section className="project-advisory" aria-labelledby="project-advisory-title">

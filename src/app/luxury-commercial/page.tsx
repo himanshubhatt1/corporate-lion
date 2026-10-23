@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServicesContactButton } from "../../components/ServicesContactButton";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
 import { ResidentialFeatureIcon } from "../../components/ResidentialFeatureIcon";
@@ -21,6 +22,7 @@ export default function LuxuryCommercialPage() {
         <span className="residential-eyebrow">Luxury Commercial</span>
         <h1 id="commercial-title">Strategic Spaces for<br />Growing Enterprises</h1>
         <p>From the first office to the next expansion, from a high-street showroom to an income-generating asset, we approach commercial real estate through the lens of business, understanding what the space needs to achieve, not simply what it needs to contain.</p>
+        <ServicesContactButton className="residential-button" label="Discuss Your Requirements" />
       </div>
     </section>
     <section className="residential-collection" id="commercial-services" aria-labelledby="commercial-collection-title">

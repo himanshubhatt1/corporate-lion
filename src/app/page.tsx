@@ -142,9 +142,9 @@ export default function Home() {
             {videos.map((video, index) => (
               <article className="video-card" data-reveal="image" style={{ transitionDelay: `${index * 90}ms` }} key={video.title}>
                 <img src={asset(video.image)} alt={video.title} />
-                <button aria-label={`Play ${video.title}`}>
+                <a className="video-card__play" href="/videos" aria-label={`Explore videos: ${video.title}`}>
                   <span />
-                </button>
+                </a>
                 <div className="video-card__caption">
                   <span>{video.client}</span>
                   <h3>&quot;{video.title}&quot;</h3>

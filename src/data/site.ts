@@ -1,8 +1,17 @@
+export const projectNavigation = [
+  { label: "Commercial", href: "/projects?category=Commercial#project-inventory" },
+  { label: "Residential", href: "/projects?category=Residential#project-inventory" },
+  { label: "Industrial", href: "/projects?category=Industrial#project-inventory" },
+  { label: "SEZ", href: "/projects?category=Special%20Economic%20Zone#project-inventory" }
+];
+
 export const serviceNavigation = [
-  { label: "Luxury Residential", href: "/luxury-residential" },
+  { label: "Residential", href: "/luxury-residential" },
   { label: "Commercial", href: "/luxury-commercial" },
   { label: "Industrial", href: "/luxury-industrial" },
-  { label: "SEZ", href: "/sez" }
+  { label: "SEZ", href: "/sez" },
+  { label: "Commercial Leasing", href: "/commercial-leasing" },
+  { label: "Co-working", href: "/co-working" }
 ];
 
 export const siteNav = [
@@ -22,7 +31,8 @@ export const footerNavigation = [
   { label: "Co-working", href: "/co-working" },
   { label: "Commercial Leasing", href: "/commercial-leasing" },
   { label: "Careers", href: "/careers" },
-  { label: "Blogs", href: "/insights" }
+  { label: "Blogs", href: "/insights" },
+  { label: "Videos", href: "/videos" }
 ];
 
 export const advisoryPractice = [
@@ -40,7 +50,7 @@ export const interestOptions = [
   "Office Leasing",
   "Retail Leasing",
   "Pre-Leased Investment",
-  "Luxurious Residential",
+  "Residential",
   "Co-Working / Managed Spaces",
   "Plots / Land Owner Advisory",
   "Industrial"
