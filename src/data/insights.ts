@@ -11,7 +11,7 @@ export const insightCategories = [
 export const trendCards = [
   {
     id: "logistics-demand",
-    href: "#guides",
+    href: "/insights/logistics-demand",
     tag: "Industrial & Logistics",
     title: "Warehousing moves closer to consumption centres",
     text: "How last-mile demand and infrastructure upgrades are changing location strategy.",
@@ -20,7 +20,7 @@ export const trendCards = [
   },
   {
     id: "luxury-living",
-    href: "#guides",
+    href: "/insights/luxury-living",
     tag: "Residential",
     title: "Privacy, space, and service reshape premium housing",
     text: "The ownership preferences influencing apartments, villas, and second homes.",
@@ -29,7 +29,7 @@ export const trendCards = [
   },
   {
     id: "gift-city",
-    href: "#guides",
+    href: "/insights/gift-city",
     tag: "Gift City",
     title: "The new geography of financial services real estate",
     text: "How last-mile demand and infrastructure upgrades are changing location strategy.",

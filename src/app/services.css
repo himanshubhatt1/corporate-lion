@@ -105,9 +105,9 @@
 /* Three identical sets keep smaller cards covering the full viewport throughout each loop. */
 .partner-marquee { --logo-gap: clamp(14px, 1.04vw, 20px); display: grid; gap: 10px; margin-top: clamp(28px, 2vw, 38px); }
 .partner-marquee__row { overflow: hidden; padding: 4px 0 10px; }
-.partner-marquee__track { display: flex; width: max(240%, calc(9.6 * (150px + var(--logo-gap)))); animation: partner-logos-scroll 28s linear infinite; }
+.partner-marquee__track { display: flex; width: max(calc(var(--logo-count, 4) * 60%), calc(var(--logo-count, 4) * 2.4 * (150px + var(--logo-gap)))); animation: partner-logos-scroll var(--logo-duration, 28s) linear infinite; }
 .partner-marquee__row:nth-child(2) .partner-marquee__track { animation-direction: reverse; }
-.partner-marquee__set { display: grid; width: calc(100% / 3); box-sizing: border-box; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--logo-gap); flex-shrink: 0; margin: 0; padding: 0 var(--logo-gap) 0 0; list-style: none; }
+.partner-marquee__set { display: grid; width: calc(100% / 3); box-sizing: border-box; grid-template-columns: repeat(var(--logo-count, 4), minmax(0, 1fr)); gap: var(--logo-gap); flex-shrink: 0; margin: 0; padding: 0 var(--logo-gap) 0 0; list-style: none; }
 .partner-marquee__set li { display: grid; place-items: center; aspect-ratio: 316 / 184; min-width: 0; padding: 18%; background: #fff; border: 1px solid #e5cbb7; box-shadow: 0 3px 4px #3020161c; }
 .partner-marquee__set img { display: block; width: 100%; height: 100%; object-fit: contain; }
 @keyframes partner-logos-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-100% / 3)); } }

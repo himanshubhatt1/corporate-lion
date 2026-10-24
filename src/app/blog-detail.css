@@ -57,3 +57,15 @@
   .blog-article__split > img { max-height: 480px; }
   .blog-detail-page .site-footer .site-whatsapp { width: 44px; height: 44px; right: 18px; bottom: 20px; }
 }
+
+.blog-back-link { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 22px; color: #9b5a28; font-size: 13px; }
+.blog-article__category { display: block; margin-bottom: 16px; color: #a9632e; font-size: 12px; letter-spacing: .13em; text-transform: uppercase; }
+.blog-article__sources a { color: #925623; text-decoration: underline; text-underline-offset: 3px; }
+.blog-next-steps { margin-top: 48px; padding: clamp(24px, 3vw, 44px); background: #faf4ec; }
+.blog-detail-page .blog-next-steps h2, .blog-detail-page .blog-related h2 { font-size: clamp(28px, 2.6vw, 42px); margin: 0 0 16px; }
+.blog-next-steps p { margin: 0 0 24px; color: #746c63; font-size: 14px; }
+.blog-related { margin-top: 44px; }
+.blog-related ul { display: grid; gap: 12px; padding: 0; list-style: none; }
+.blog-related a { display: block; padding: 16px 0; border-bottom: 1px solid #e6d9ca; font-size: 15px; line-height: 1.5; }
+.blog-related a:hover, .blog-back-link:hover { color: #b87333; }
+.blog-detail-page a:focus-visible { outline: 2px solid #b87333; outline-offset: 4px; }

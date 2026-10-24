@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { asset } from "../lib/assets";
 
-const MODAL_DELAY_MS = 2 * 60 * 1000;
+const MODAL_DELAY_MS = 60 * 1000;
 
 export function HomeSezModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ export function HomeSezModal() {
 
   useEffect(() => {
     if (isOpen) return;
-    // Start a fresh two-minute wait on arrival and after each dismissal.
+    // Start a fresh 60-second wait on arrival and after each dismissal.
     const timer = window.setInterval(() => {
       if (!document.hidden && !document.querySelector("dialog[open]")) setIsOpen(true);
     }, MODAL_DELAY_MS);

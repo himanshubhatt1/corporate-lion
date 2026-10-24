@@ -171,7 +171,7 @@
 }
 /* Larger brand marks and recognisable social colours. */
 .masthead__brand, .site-footer .footer__brand { transition: transform .35s ease, filter .35s ease; }
-.masthead__brand:is(:hover, :focus-visible), .site-footer .footer__brand:is(:hover, :focus-visible) { transform: scale(1.045); filter: drop-shadow(0 3px 10px #d8953038); }
+.masthead__brand:is(:hover, :focus-visible), .site-footer .footer__brand:is(:hover, :focus-visible) { transform: translateY(-2px) scale(1.06); filter: drop-shadow(0 3px 10px #d8953038); }
 .site-footer .footer__socials { gap: 10px; }
 .site-footer .footer__socials > :is(span, a) { flex: 0 0 44px; width: 44px; height: 44px; border: 0; border-radius: 4px; font-size: 24px; transition: transform .25s ease, filter .25s ease; }
 .site-footer .footer__socials > [aria-label="LinkedIn"] { background: #0a66c2; }
@@ -188,7 +188,9 @@
 .blog-contact-cta p { margin: 0 0 24px; color: #77716b; }
 .video-card__play:focus-visible, .featured-video__play:focus-visible { outline: 3px solid #edbb86; outline-offset: 5px; }
 @media (prefers-reduced-motion: no-preference) {
-  .masthead__brand { animation: brandArrival .8s .35s both cubic-bezier(.22, 1, .36, 1); }
+  .masthead__brand { animation: brandArrival .8s .35s backwards cubic-bezier(.22, 1, .36, 1), brandFloat 4s 1.15s ease-in-out infinite; }
+  /* Separate translate from transform so the hover scale still works. */
+  @keyframes brandFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -3px; } }
   @keyframes brandArrival { from { opacity: 0; transform: translateX(-16px) scale(.94); } to { opacity: 1; transform: none; } }
 }
 @media (prefers-reduced-motion: reduce) {

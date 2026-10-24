@@ -10,7 +10,7 @@ export const serviceNavigation = [
   { label: "Commercial", href: "/luxury-commercial" },
   { label: "Industrial", href: "/luxury-industrial" },
   { label: "SEZ", href: "/sez" },
-  { label: "Commercial Leasing", href: "/commercial-leasing" },
+  { label: "Commercial Leasing", href: "/luxury-commercial" },
   { label: "Co-working", href: "/co-working" }
 ];
 
@@ -47,13 +47,9 @@ export const advisoryPractice = [
 export const legalLinks = ["Privacy Policy", "Terms of Engagement", "RERA Compliance"];
 
 export const interestOptions = [
-  "Office Leasing",
-  "Retail Leasing",
-  "Pre-Leased Investment",
-  "Residential",
-  "Co-Working / Managed Spaces",
-  "Plots / Land Owner Advisory",
-  "Industrial"
+  "I want to buy",
+  "I want to sell",
+  "I want to lease"
 ];
 
 export const contactDetails = [

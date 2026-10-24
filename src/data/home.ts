@@ -78,12 +78,14 @@ export const videos = [
   {
     client: "Apex Finserve Group",
     title: "Structuring a 250,000 Sq. Ft. Financial Headquarters",
-    image: "home/client-apex.webp"
+    image: "home/Clients-stories-1-poster.webp",
+    video: "home/Clients-stories-1.mp4"
   },
   {
     client: "Chauhan Family Trust",
     title: "Unlocking Generational Value from Prime Land",
-    image: "home/client-chauhan.webp"
+    image: "home/Clients-stories-2-poster.webp",
+    video: "home/Clients-stories-2.mov"
   },
   {
     client: "Horizon Developers",
@@ -95,6 +97,7 @@ export const videos = [
 export const insights = [
   {
     tag: "Capital Markets",
+    href: "/insights/commercial-reits-india",
     title: "Institutional Capital Influx: The Next Wave of Commercial REITs in India",
     date: "July 10, 2026",
     readTime: "4 min read",
@@ -102,6 +105,7 @@ export const insights = [
   },
   {
     tag: "Landowner Advisory",
+    href: "/insights/joint-development-agreements",
     title: "Unlocking Urban Land: Structuring High-Yield Joint Development Agreements (JDAs)",
     date: "June 28, 2026",
     readTime: "5 min read",
@@ -109,6 +113,7 @@ export const insights = [
   },
   {
     tag: "Workplace Strategy",
+    href: "/insights/gcc-commercial-leasing",
     title: "Global Capability Centers (GCCs): The Primary Engine of Commercial Leasing",
     date: "June 15, 2026",
     readTime: "5 min read",
@@ -116,6 +121,7 @@ export const insights = [
   },
   {
     tag: "Alternative Assets",
+    href: "/insights/data-centres-logistics",
     title: "Data Centers & Logistics: Diversifying Commercial Real Estate Portfolios",
     date: "May 30, 2026",
     readTime: "7 min read",

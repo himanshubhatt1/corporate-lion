@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { projectCategories, projects, type ProjectCategory } from "../data/projects";
 import { servicePartners } from "../data/services";
 import { asset } from "../lib/assets";
+import { PartnerLogoMarquee } from "./PartnerLogoMarquee";
 import { ProjectInquiryDialog } from "./ProjectInquiryDialog";
 
 export function ProjectCollection() {
@@ -57,19 +58,13 @@ export function ProjectCollection() {
           </div>
         </div>
       </section>
-      <section className="project-developers projects-container" aria-labelledby="project-developers-title">
-        <div className="project-inventory__heading" data-reveal="up">
+      <section className="project-developers" aria-labelledby="project-developers-title">
+        <div className="projects-container project-inventory__heading" data-reveal="up">
           <span className="projects-eyebrow">Explore by Developer</span>
           <h2 id="project-developers-title">Our <span>Developers</span></h2>
           <p>Speak with our team about opportunities from leading developers.</p>
         </div>
-        <div className="project-developers__grid">
-          {servicePartners.slice(0, 3).map(developer => <article className="project-developer" key={developer.name}>
-            <div className="project-developer__logo"><img src={asset(developer.image)} alt={developer.name} loading="lazy" /></div>
-            <h3>{developer.name}</h3>
-            <button type="button" className="projects-button" onClick={() => setInquiry({ projectName: developer.name })}>Enquire about Projects <span aria-hidden="true">&rarr;</span></button>
-          </article>)}
-        </div>
+        <PartnerLogoMarquee label="Our Developers" partners={servicePartners.slice(0, 3)} />
       </section>
       <section className="project-advisory" aria-labelledby="project-advisory-title">
         <span className="projects-eyebrow">Private Advisory Desk</span>

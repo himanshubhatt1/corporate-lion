@@ -1,3 +1,4 @@
+import { ClientStories } from "../components/ClientStories";
 import { SectionTitle } from "../components/SectionTitle";
 import { HomeSezModal } from "../components/HomeSezModal";
 import { TestimonialSlider } from "../components/TestimonialSlider";
@@ -6,8 +7,7 @@ import { asset } from "../lib/assets";
 import {
   insights,
   metrics,
-  serviceCards,
-  videos
+  serviceCards
 } from "../data/home";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
@@ -138,20 +138,7 @@ export default function Home() {
         <div className="container">
           <SectionTitle eyebrow="Video Endorsements" title="Stories From Our Clients" />
 
-          <div className="video-grid">
-            {videos.map((video, index) => (
-              <article className="video-card" data-reveal="image" style={{ transitionDelay: `${index * 90}ms` }} key={video.title}>
-                <img src={asset(video.image)} alt={video.title} />
-                <a className="video-card__play" href="/videos" aria-label={`Explore videos: ${video.title}`}>
-                  <span />
-                </a>
-                <div className="video-card__caption">
-                  <span>{video.client}</span>
-                  <h3>&quot;{video.title}&quot;</h3>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ClientStories />
 
           <div className="center-action">
             <a className="button button--secondary" href="/videos">
@@ -192,7 +179,7 @@ export default function Home() {
               </p>
               <div className="featured-insight__meta">
                 <time>July 18, 2026 &bull; 6 min read</time>
-                <a href="/insights">
+                <a href="/insights/flight-to-quality-office-spaces">
                   Read Featured Analysis <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -201,7 +188,7 @@ export default function Home() {
 
           <div className="insight-list">
             {insights.map((item, index) => (
-              <a className="insight-item" href="/insights" data-reveal="right" style={{ transitionDelay: `${index * 90}ms` }} key={item.title}>
+              <a className="insight-item" href={item.href} data-reveal="right" style={{ transitionDelay: `${index * 90}ms` }} key={item.title}>
                 <div className="insight-item__thumb">
                   <img src={asset(item.image)} alt="" />
                 </div>

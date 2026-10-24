@@ -132,3 +132,17 @@
 /* Make the article image, category, and title open the same detail link. */
 .insights-page .trend-card a::after { position: absolute; inset: 0; content: ""; }
 .insights-page .trend-card:focus-within { outline: 2px solid #b87333; outline-offset: 3px; }
+
+/* Shared, prominent video-library actions for both Insights video sections. */
+.insights-video-actions { display: flex; justify-content: center; margin-top: clamp(28px, 3vw, 48px); }
+.insights-page .insights-video-cta,
+.insights-page .video-intelligence__copy .insights-video-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 44px; padding: 14px 24px; background: #b87333; color: #fff; font-size: 11px; font-weight: 500; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; transition: background .25s ease, transform .25s ease; }
+.insights-page .video-intelligence__copy .insights-video-cta::before,
+.insights-page .video-intelligence__copy .insights-video-cta::after { display: none; }
+.insights-page .insights-video-cta:hover { background: #945b28; transform: translateY(-2px); }
+.insights-page .insights-video-cta:focus-visible { outline: 2px solid #b87333; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .insights-page .insights-video-cta { transition: none; } .insights-page .insights-video-cta:hover { transform: none; } }
+
+.insights-page .lead-story h3 a { color: inherit; }
+.insights-page .lead-story__read { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 10px; color: #a9632e; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.insights-page .lead-story a:focus-visible { outline: 2px solid #b87333; outline-offset: 4px; }

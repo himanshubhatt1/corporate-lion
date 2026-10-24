@@ -46,7 +46,7 @@ export function ContactForm({ reveal = true }: { reveal?: boolean }) {
       </div>
 
       <fieldset className="interest-chips">
-        <legend>I am interested in: *</legend>
+        <legend>What are you looking for? *</legend>
         <div>
           {interestOptions.map((option) => (
             <button

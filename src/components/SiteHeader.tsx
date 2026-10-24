@@ -85,7 +85,7 @@ export function SiteHeader({ tone = "dark" }: SiteHeaderProps) {
                     </button>
                   </div>
                   <div className="masthead__submenu" id={menuId} hidden={!menuOpen}>
-                    {submenu.map((service) => <a href={service.href} key={service.href} aria-current={pathname === service.href ? "page" : undefined}
+                    {submenu.map((service) => <a href={service.href} key={service.label} aria-current={pathname === service.href ? "page" : undefined}
                       onClick={() => { setOpenMenu(null); setIsOpen(false); }}>{service.label}</a>)}
                   </div>
                 </div>;

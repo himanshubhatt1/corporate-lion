@@ -19,14 +19,15 @@ export default function BlogDetailPage() {
       <img className="blog-hero__image" src={asset("blog/hero.webp")} alt="" fetchPriority="high" />
       <SiteHeader />
       <div className="blog-container blog-hero__content">
-        <span className="blog-eyebrow">Our Videos</span>
+        <span className="blog-eyebrow">Insights &amp; Perspectives</span>
         <h2 id="blog-hero-title">Insights, Stories<br />and Opportunities</h2>
-        <p>Explore our video library for project tours, market insights, client stories and the latest opportunities in real estate.</p>
+        <p>Ideas and perspectives on the places we live, work, and grow.</p>
       </div>
     </section>
 
     <article className="blog-article" aria-labelledby="blog-title">
       <div className="blog-container">
+        <a className="blog-back-link" href="/insights">&larr; All Insights</a>
         <header className="blog-article__header">
           <h1 id="blog-title">{featuredBlog.title}</h1>
           <p className="blog-article__byline">By {featuredBlog.author} <span aria-hidden="true">·</span> <span>{featuredBlog.readingTime}</span></p>

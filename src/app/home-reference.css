@@ -205,3 +205,12 @@
 .home-page .sez-modal__close span { background: #40362c; }
 .home-page .sez-modal__close:hover span { background: #a65e23; }
 .home-page .sez-modal :is(button,a):focus-visible { outline: 2px solid #a65e23; outline-offset: 3px; }
+
+/* Client stories use actual media files; the library CTA remains below the cards. */
+.home-page .stories .video-card--playable > video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.home-page .stories .video-card--playable .video-card__play { background: #171714bb; border: 1px solid #ffffffa0; }
+.home-page .stories .video-card--playable .video-card__play span { visibility: visible; }
+.home-page .stories .video-card--playable[data-playing="true"] > video { object-fit: contain; }
+.home-page .stories .video-card--playable[data-playing="true"]::after,
+.home-page .stories .video-card--playable[data-playing="true"] .video-card__caption { display: none; }
+.home-page .stories .video-card__error { position: absolute; z-index: 4; left: 12px; right: 12px; bottom: 12px; margin: 0; padding: 12px; background: #211f1a; color: #fff; font-size: 12px; }

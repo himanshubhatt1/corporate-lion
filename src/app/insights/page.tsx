@@ -41,10 +41,11 @@ export default function InsightsPage() {
               <img src={asset("insights/market-skyline.webp")} alt="City skyline at sunset" />
               <div>
                 <span>Commercial Real Estate · Featured</span>
-                <h3>
+                <h3><a href="/insights/indias-next-office-cycle">
                   India&apos;s next office cycle: why quality, flexibility, and talent access are
                   defining demand
-                </h3>
+                </a></h3>
+              <a className="lead-story__read" href="/insights/indias-next-office-cycle">Read Perspective <span aria-hidden="true">&rarr;</span></a>
               </div>
             </article>
 
@@ -101,6 +102,9 @@ export default function InsightsPage() {
                 </article>
               ))}
             </div>
+            <div className="insights-video-actions">
+              <a className="insights-video-cta" href="/videos">Explore All Videos <span aria-hidden="true">&rarr;</span></a>
+            </div>
           </div>
         </section>
 
@@ -116,7 +120,7 @@ export default function InsightsPage() {
                 Conversations and explainers that bring investment thinking, property strategy, and
                 market dynamics into sharper focus.
               </p>
-              <a href="/videos">Explore All Videos</a>
+              <a className="insights-video-cta" href="/videos">Explore All Videos <span aria-hidden="true">&rarr;</span></a>
             </div>
           </div>
         </section>
