@@ -18,7 +18,7 @@
 .home-page .overview__grid { grid-template-columns: 41% 49%; gap: 10%; }
 .home-page .overview h2 { font-size: min(4.375vw, 84px); }
 .home-page .overview h2 em::after { width: min(5.2vw, 100px); margin-top: min(1.04vw, 20px); }
-.home-page .overview__copy > p { margin: min(1.67vw, 32px) 0 0; font-size: min(1.04vw, 20px); line-height: 1.6; }
+.home-page .overview__copy > p { margin: min(1.67vw, 32px) 0 0; font-size: min(1.04vw, 20px); line-height: 1.6; text-align: justify; }
 .home-page .overview__pattern--left { width: 17%; height: 51%; }
 .home-page .overview__pattern--bottom { left: 46%; bottom: 5%; width: 17%; height: 48%; }
 .home-page .overview__pattern--right { width: 36%; height: 50%; }
