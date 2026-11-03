@@ -50,7 +50,9 @@ export function ProjectCollection() {
                 <div className="inventory-card__body">
                   <h3><button type="button" onClick={() => setInquiry({ projectName: project.title })}>{project.title}<span aria-hidden="true">›</span></button></h3>
                   <span className="inventory-card__location"><svg viewBox="0 0 16 20" aria-hidden="true"><path d="M8 0a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" /></svg>{project.location}</span>
-                  <div className="inventory-card__details"><p>{project.description}</p><span>{project.configuration}</span></div>
+                  {project.highlights ? <ul className="inventory-card__highlights">
+                    {project.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}
+                  </ul> : <div className="inventory-card__details"><p>{project.description}</p><span>{project.configuration}</span></div>}
                   <div className="inventory-card__action"><button type="button" onClick={() => setInquiry({ projectName: project.title })} aria-label={`Request price for ${project.title}`}>Price on Request <span aria-hidden="true">→</span></button></div>
                 </div>
               </article>)}

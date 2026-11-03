@@ -6,43 +6,82 @@ export type Project = {
   title: string;
   category: Exclude<ProjectCategory, "All">;
   location: string;
-  description: string;
-  configuration: string;
+  description?: string;
+  configuration?: string;
+  highlights?: string[];
   image: string;
   imageAlt: string;
   badge?: string;
 };
 
-// Residential imagery and copy follow the supplied project collection.
-const residentialImages = [
-  ["villa-pool", "Contemporary villa overlooking a private swimming pool"],
-  ["waterfront", "Waterfront villa and swimming pool illuminated at dusk"],
-  ["poolside", "Tropical pool terrace with palm trees and loungers"],
-  ["residences", "Curved residential development with landscaped grounds"],
-  ["courtyard", "Mediterranean villas surrounding a courtyard pool"],
-  ["suite", "Garden-facing luxury bedroom with full-height windows"],
-  ["villa-pool", "Private pool beside a modern residence"],
-  ["residences", "Contemporary residential community"],
-  ["poolside", "Landscaped tropical swimming pool"],
+// Project details supplied by the client; existing imagery is representative.
+export const residentialProjects: Project[] = [
+  {
+    "id": "kavisha-the-masterpiece",
+    "title": "Kavisha The Masterpiece",
+    "category": "Residential",
+    "location": "South Bopal, Gala Gymkhana Road",
+    "highlights": [
+      "21 Storeys",
+      "7 Towers",
+      "4 & 5 BHK",
+      "Possession in 2030"
+    ],
+    "image": "projects/residences.webp",
+    "imageAlt": "Representative residential development with landscaped grounds"
+  },
+  {
+    "id": "venus-the-universe",
+    "title": "Venus The Universe",
+    "category": "Residential",
+    "location": "Nehrungar, Near Shivranjini Cross Road",
+    "highlights": [
+      "22 Storeys",
+      "10 Towers",
+      "4 BHK",
+      "Possession in December 2030"
+    ],
+    "image": "projects/residential-towers-illustration.webp",
+    "imageAlt": "AI-generated illustration of residential towers with balconies and landscaped gardens"
+  }
 ];
 
-export const residentialProjects: Project[] = residentialImages.map(([image, imageAlt], index) => ({
-  id: `residential-${index + 1}`,
-  title: "Sovereign Bay Villas",
-  category: "Residential",
-  location: "Vasco da Gama, Goa",
-  description: "Private-pool villas inside an exclusive 5-star branded coastal master community.",
-  configuration: "3 & 4 Bed Villas",
-  image: `projects/${image}.webp`,
-  imageAlt,
-}));
+export const commercialProjects: Project[] = [
+  {
+    "id": "mondeal-one",
+    "title": "Mondeal One by HN Safal",
+    "category": "Commercial",
+    "location": "SG Highway, Ahmedabad",
+    "highlights": [
+      "35 Storeys",
+      "1 Tower",
+      "Retail & Offices",
+      "Possession in December 2026"
+    ],
+    "image": "Rectangle 31.svg",
+    "imageAlt": "Representative modern glass-fronted commercial buildings"
+  },
+  {
+    "id": "mondeal-two",
+    "title": "Mondeal Two by HN Safal",
+    "category": "Commercial",
+    "location": "Iscon Ambli, Near Double Tree Hilton",
+    "highlights": [
+      "12 Storeys",
+      "1 Tower",
+      "Retail & Offices",
+      "Possession in December 2026"
+    ],
+    "image": "projects/commercial-offices-illustration.webp",
+    "imageAlt": "AI-generated illustration of a glass-fronted office and retail building at dusk"
+  }
+];
 
 // Other categories invite an inventory enquiry rather than inventing listings.
 export const projectCollections: Project[] = [
-  { id: "commercial-collection", title: "Commercial Opportunities", category: "Commercial", location: "Locations on request", description: "Explore premium commercial spaces with our real estate advisory team.", configuration: "Office & Retail", image: "Rectangle 31.svg", imageAlt: "Modern glass-fronted commercial buildings", badge: "Commercial Collection" },
   { id: "industrial-collection", title: "Industrial Opportunities", category: "Industrial", location: "Locations on request", description: "Discover spaces for manufacturing, warehousing, and logistics.", configuration: "Industrial Spaces", image: "home/industrial.webp", imageAlt: "Industrial processing facility", badge: "Industrial Collection" },
   { id: "sez-collection", title: "Special Economic Zones", category: "Special Economic Zone", location: "Locations on request", description: "Speak with our team about business-ready spaces in Special Economic Zones.", configuration: "Business Spaces", image: "home/sez.webp", imageAlt: "Aerial view of industrial and business infrastructure", badge: "SEZ Collection" },
 ];
 
-export const projects = [...residentialProjects, ...projectCollections];
+export const projects = [...residentialProjects, ...commercialProjects, ...projectCollections];
 

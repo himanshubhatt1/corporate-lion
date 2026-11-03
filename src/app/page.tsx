@@ -71,8 +71,8 @@ export default function Home() {
             </p>
           </div>
           <div className="overview__media" data-reveal="image-stack">
-            <img className="overview__main" src={asset("home/overview-residences.webp")} alt="Premium residential towers surrounded by landscaped gardens" />
-            <img className="overview__float" src={asset("home/overview-city.webp")} alt="Commercial towers in a city skyline" />
+            <img className="overview__main" src={asset("home/overview-residences-v2.webp")} alt="Illustration of contemporary residential towers with landscaped gardens" width={1145} height={1374} loading="lazy" decoding="async" />
+            <img className="overview__float" src={asset("home/overview-city-v2.webp")} alt="Illustration of glass office towers overlooking a green business district" width={1374} height={1145} loading="lazy" decoding="async" />
             <div className="experience-card" data-reveal="scale">
               <strong>15+</strong>
               <span>Years of Experience</span>

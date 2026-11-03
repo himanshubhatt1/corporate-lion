@@ -2,29 +2,29 @@ export const serviceCards = [
   {
     title: "Commercial",
     text: "Strategically located commercial spaces designed to support businesses with excellent connectivity, functionality, and growth potential.",
-    image: "home/commercial.webp",
-    alt: "Modern commercial campus beside a connected city highway",
+    image: "home/service-commercial-v2.webp",
+    alt: "Illustration of a modern glass office campus with landscaped entrances",
     href: "/luxury-commercial"
   },
   {
     title: "Residential",
     text: "Premium residential properties in prime locations, offering sophisticated living, modern amenities, and exceptional lifestyle value.",
-    image: "home/luxury-residential.webp",
-    alt: "Illuminated luxury residence with landscaped gardens",
+    image: "home/service-residential-v2.webp",
+    alt: "Illustration of a contemporary residence with a private pool and gardens",
     href: "/luxury-residential"
   },
   {
     title: "Industrial",
     text: "Well-planned industrial properties for manufacturing, warehousing, and logistics, supported by robust infrastructure.",
-    image: "home/industrial.webp",
-    alt: "Industrial processing facility with large blue towers",
+    image: "home/service-industrial-v2.webp",
+    alt: "Illustration of a modern industrial facility with loading docks and truck access",
     href: "/luxury-industrial"
   },
   {
     title: "SEZ",
     text: "Business-ready properties within Special Economic Zones, offering strategic locations, modern infrastructure.",
-    image: "home/sez.webp",
-    alt: "Aerial view of a large industrial Special Economic Zone",
+    image: "home/service-sez-v2.webp",
+    alt: "Illustration of a planned Special Economic Zone with offices and industrial infrastructure",
     href: "/sez"
   }
 ];

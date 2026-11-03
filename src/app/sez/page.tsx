@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServicesContactButton } from "../../components/ServicesContactButton";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
-import { sezBenefits, sezLocations } from "../../data/sez";
+import { sezLocations } from "../../data/sez";
 import { contactDetails } from "../../data/site";
 import { asset } from "../../lib/assets";
 import "../residential.css";
@@ -47,7 +47,7 @@ export default function SezPage() {
         <div className="sez-benefits" aria-labelledby={`${location.id}-benefits-title`}>
           <h3 id={`${location.id}-benefits-title`}>Why Invest Here</h3>
           <div className="sez-benefits__grid">
-            {sezBenefits.map((benefit, benefitIndex) => <article className="sez-benefit" key={benefit.title} tabIndex={0} aria-labelledby={`${location.id}-benefit-${benefitIndex}`}>
+            {location.benefits.map((benefit, benefitIndex) => <article className="sez-benefit" key={benefit.title} tabIndex={0} aria-labelledby={`${location.id}-benefit-${benefitIndex}`}>
               <LocationIcon />
               <h4 id={`${location.id}-benefit-${benefitIndex}`}>{benefit.title}</h4>
               <p>{benefit.text}</p>
