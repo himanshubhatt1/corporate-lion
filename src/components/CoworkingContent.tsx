@@ -12,7 +12,7 @@ export function CoworkingContent() {
 
   return <>
     <section className="coworking-hero" id="top">
-      <img className="coworking-hero__image" src={asset("coworking-hero.png")} alt="" fetchPriority="high" />
+      <img className="coworking-hero__image" src={asset("coworking/hero-v2.webp")} alt="" fetchPriority="high" />
       <SiteHeader />
       <div className="coworking-container coworking-hero__content">
         <span className="coworking-eyebrow">Co-working Spaces</span>

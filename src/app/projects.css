@@ -41,7 +41,7 @@
 .inventory-card__details { display: flex; align-items: flex-end; gap: calc(20 * var(--project-unit)); }
 .inventory-card__details p { flex: 1; margin: 0; color: #777 !important; font-size: max(10px, calc(14 * var(--project-unit))); line-height: 1.45; transition: color .3s; }
 .inventory-card__details > span { flex-shrink: 0; color: #4d4b47; font-size: max(10px, calc(15 * var(--project-unit))); line-height: 1.45; transition: color .3s; }
-.inventory-card__highlights { display: grid; gap: 6px; margin: 14px 0 0; padding-left: 18px; color: #777; font-size: max(12px, calc(15 * var(--project-unit))); line-height: 1.5; transition: color .3s; }
+.inventory-card__highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 14px 0 0; padding-left: 18px; color: #777; font-size: max(12px, calc(15 * var(--project-unit))); line-height: 1.5; transition: color .3s; }
 .inventory-card__highlights li::marker { color: #b87333; }
 .inventory-card:is(:hover, :focus-within) .inventory-card__highlights { color: #cbc8c1; }
 .inventory-card__action { margin-top: calc(22 * var(--project-unit)); padding-top: calc(27 * var(--project-unit)); border-top: 1px solid #e8ddd1; transition: border-color .3s; }

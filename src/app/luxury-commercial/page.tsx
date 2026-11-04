@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function LuxuryCommercialPage() {
   return <main className="residential-page luxury-commercial-page">
     <section className="residential-hero" aria-labelledby="commercial-title">
-      <img className="residential-hero__image" src={asset("commercial/hero.webp")} alt="" fetchPriority="high" />
+      <img className="residential-hero__image" src={asset("commercial/hero1.jpg")} alt="" fetchPriority="high" />
       <SiteHeader />
       <div className="residential-container residential-hero__content">
         <span className="residential-eyebrow">Luxury Commercial</span>

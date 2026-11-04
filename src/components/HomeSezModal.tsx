@@ -76,7 +76,7 @@ export function HomeSezModal() {
         </button>
 
         <div className="sez-modal__image-wrap">
-          <img src={asset("Rectangle 49.svg")} alt="Aerial view of a special economic zone district" />
+          <img src={asset("Special-Economic-modal.jpg")} alt="Aerial view of a special economic zone district" />
         </div>
 
         <div className="sez-modal__content">

@@ -2,21 +2,21 @@ export const serviceCards = [
   {
     title: "Commercial",
     text: "Strategically located commercial spaces designed to support businesses with excellent connectivity, functionality, and growth potential.",
-    image: "home/service-commercial-v2.webp",
+    image: "home/service-commercial-v3.jpg",
     alt: "Illustration of a modern glass office campus with landscaped entrances",
     href: "/luxury-commercial"
   },
   {
     title: "Residential",
     text: "Premium residential properties in prime locations, offering sophisticated living, modern amenities, and exceptional lifestyle value.",
-    image: "home/service-residential-v2.webp",
+    image: "home/service-residential-v3.jpg",
     alt: "Illustration of a contemporary residence with a private pool and gardens",
     href: "/luxury-residential"
   },
   {
     title: "Industrial",
     text: "Well-planned industrial properties for manufacturing, warehousing, and logistics, supported by robust infrastructure.",
-    image: "home/service-industrial-v2.webp",
+    image: "home/service-industrial-v3.jpg",
     alt: "Illustration of a modern industrial facility with loading docks and truck access",
     href: "/luxury-industrial"
   },
